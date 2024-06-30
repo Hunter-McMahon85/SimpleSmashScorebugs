@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/singles.css";
+import "../../css/singles.css";
 
 const ScoreboardSingle = () => {
   //this has to be done in every function because of the way conditional rendering is handled in scoreboard.js

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/commie.css";
+import "../../css/commie.css";
 
 const Comms = () => {
   const [isAnimated, setIsAnimated] = useState(false);

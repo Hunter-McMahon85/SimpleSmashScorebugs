@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import ScoreboardSingle from "../Components/singles";
-import ScoreboardDuo from "../Components/doubles";
-import MatchStart1 from "../Components/matchstart1";
-import MatchStart2 from "../Components/matchstart2";
+import ScoreboardSingle from "../Components/NTZ/singles";
+import ScoreboardDuo from "../Components/NTZ/doubles";
+import MatchStart1 from "../Components/NTZ/matchstart1";
+import MatchStart2 from "../Components/NTZ/matchstart2";
 
 function Scoreboard() {
   

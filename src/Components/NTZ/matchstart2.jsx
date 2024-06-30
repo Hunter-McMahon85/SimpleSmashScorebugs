@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/ms2.css";
+import "../../css/ms2.css";
 
 const MatchStart2 = () => {
   const [isAnimated, setIsAnimated] = useState(false);

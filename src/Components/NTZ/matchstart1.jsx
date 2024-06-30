@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/ms1.css";
+import "../../css/ms1.css";
 
 const MatchStart1 = () => {
   const [isSlide, setSlide] = useState(true);

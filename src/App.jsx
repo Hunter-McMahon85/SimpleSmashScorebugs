@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Controller from "./Pages/scorecontroller";
 import Scoreboard from "./Pages/scoreboard";
 import Landing from "./Pages/landing";
-import Comms from "./Components/comms";
+import Comms from "./Components/NTZ/comms";
 
 function App() {
   return (

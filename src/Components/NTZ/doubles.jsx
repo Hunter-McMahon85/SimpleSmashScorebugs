@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../css/doubles.css";
+import "../../css/doubles.css";
 
 const ScoreboardDuo = () => {
   const [isAnimated, setIsAnimated] = useState(false);
