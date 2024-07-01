@@ -10,9 +10,9 @@ const Landing = () => {
                     <nav class="topnav">
                         <ul class="navitems">
                             <li><a href="/">Home</a></li>
-                            <li><a href="scoreboard">How to Use</a></li>
-                            <li><a href="controller">Scorebugs</a></li>
-                            <li><a href="comms">About</a></li>
+                            <li><a href="howtouse">How to Use</a></li>
+                            <li><a href="scorebugs">Scorebugs</a></li>
+                            <li><a href="about">About</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -32,8 +32,9 @@ const Landing = () => {
                         Other overlays require unneeded downloads when in reality it is just an webpage and some interface you are running locally on your machine.
                         On the Other hand Simple Smash scorebugs utilizes the Custom Browser Docks feature of OBS to provide a download free scorebug overlay for your smash bros stream.
                         Additionally, we provide integration with the start.gg api and its Stream Queue feature to allow you to automatically fetch tags for your scoebugs reducing downtime between games.
-                        To get started, or to learn more. Feel free to click one of the above links and see if simple smash scorebugs can provide a solution for you.
                     </p>
+                    <p>Learn how to get started by clicking here</p>
+                    <p>To view scorebugs, click here</p>
                 </div>
             </div>
         </>

@@ -4,6 +4,9 @@ import Controller from "./Pages/scorecontroller";
 import Scoreboard from "./Pages/scoreboard";
 import Landing from "./Pages/landing";
 import Comms from "./Components/NTZ/comms";
+import About from "./Pages/about";
+import HowToUse from "./Pages/howto";
+import ScorebugSelect from "./Pages/scorebugs";
 
 function App() {
   return (
@@ -11,6 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/scoreboard" element={<Scoreboard />} />
+        <Route path="/howtouse" element={<HowToUse />} />
+        <Route path="/scorebugs" element={<ScorebugSelect/>} />
+        <Route path="/about" element={<About/>} />
         <Route path="/controller" element={<Controller />} />
         <Route path="/comms" element={<Comms />} />
       </Routes>
