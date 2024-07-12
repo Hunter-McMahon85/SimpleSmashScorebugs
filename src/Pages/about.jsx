@@ -21,7 +21,9 @@ const About = () => {
                 <h2>About</h2>
 
                 <div class="instructions">
-                    <h3><u>The Creation</u></h3>
+                    <h3><u>Why this Utility works</u></h3>
+                    <p>No matter if a website is added to OBS as a source or as a custom browser dock, OBS will behave like a single web browser window for both pages. Because of this, webpages added as custom browser docks to OBS can modify the state of a webpage added as a stream source by simply using the localStorage class in Javascript. In turn we are able to provide an simple and lightweight scorebug overlay solution that requires 0 downloads. This does come with the downside of not being usable offline. However considering that a livestream requires an internet connection, it is likely an edge case that will likely never be an huge issue</p>
+                    <h3><u>History</u></h3>
                     <p>
                         This scoreboard was originally created for the University of Oregon (sco Ducks!) Duck Hunt series of
                         tournaments

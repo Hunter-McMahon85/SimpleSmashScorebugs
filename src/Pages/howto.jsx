@@ -21,7 +21,7 @@ const HowToUse = () => {
                 <h2>How To Use</h2>
 
                 <div class="instructions">
-
+                <p>The Gist of this Setup is that you will be adding an controller webpage to OBS as a custom browser Dock and a scoreboard page as a source in OBS</p>
                 </div>
             </div>
         </>

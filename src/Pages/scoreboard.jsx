@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import NTZScoreBug from "../Components/NTZ/NTZscorebug";
 
-function Scoreboard() {
+const Scoreboard = () => {
   const BugTheme = localStorage.getItem("BugTheme");
   let ScoreBug;
 
   switch (BugTheme) {
     case "NTZ":
-      ScoreboardComponent = (<NTZScoreBug/>);
+      ScoreBug = (<NTZScoreBug/>);
       break;
     default:
-      ScoreboardComponent = (<NTZScoreBug/>);
+      ScoreBug = (<NTZScoreBug/>);
       break;
   }
 

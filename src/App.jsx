@@ -1,12 +1,14 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Controller from "./Pages/scorecontroller";
-import Scoreboard from "./Pages/scoreboard";
 import Landing from "./Pages/landing";
 import Comms from "./Components/NTZ/comms";
 import About from "./Pages/about";
 import HowToUse from "./Pages/howto";
 import ScorebugSelect from "./Pages/scorebugs";
+import Scoreboard from "./Pages/scoreboard";
+
+
 
 function App() {
   return (
