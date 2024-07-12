@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../css/singles.css";
 
-const ScoreboardSingle = () => {
+const Singles = () => {
   //this has to be done in every function because of the way conditional rendering is handled in scoreboard.js
   const [isAnimated, setIsAnimated] = useState(false);
   const [P11, setP11] = useState("");
@@ -73,4 +73,4 @@ const ScoreboardSingle = () => {
   );
 };
 
-export default ScoreboardSingle;
+export default Singles;
