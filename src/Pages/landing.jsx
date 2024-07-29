@@ -35,6 +35,7 @@ const Landing = () => {
                     </p>
                     <p>Learn how to get started by clicking here</p>
                     <p>To view scorebugs, click here</p>
+                    <p>To view scorebugs, click here</p>
                 </div>
             </div>
         </>
