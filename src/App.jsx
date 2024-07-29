@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Routes } from "react-router-dom";
+import {BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Controller from "./Pages/scorecontroller";
 import Landing from "./Pages/landing";
 import Comms from "./Components/NTZ/comms";
@@ -12,17 +12,17 @@ import Scoreboard from "./Pages/scoreboard";
 
 function App() {
   return (
-
-    <Routes>
-      <Route path="/" element={<Landing />} />
-      <Route path="/scoreboard" element={<Scoreboard />} />
-      <Route path="/howtouse" element={<HowToUse />} />
-      <Route path="/scorebugs" element={<ScorebugSelect />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/controller" element={<Controller />} />
-      <Route path="/comms" element={<Comms />} />
-    </Routes>
-
+    <Router basename="/SimpleSmashScorebugs">
+      <Routes>
+        <Route path="/" element={<Landing />} />
+        <Route path="/scoreboard" element={<Scoreboard />} />
+        <Route path="/howtouse" element={<HowToUse />} />
+        <Route path="/scorebugs" element={<ScorebugSelect/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/controller" element={<Controller />} />
+        <Route path="/comms" element={<Comms />} />
+      </Routes>
+    </Router>
   );
 }
 
