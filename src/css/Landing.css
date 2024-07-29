@@ -5,7 +5,7 @@ body {
   margin: 0;
   text-align: center;
   list-style-position: inside;
-  background-image: url("../images/smashball.png");
+  background-image: url("../../public/images/smashball.png");
   background-size: 2%;
   font-family: Verdana;
   width: 100%;
@@ -57,7 +57,7 @@ body {
 .title {
   margin: 0;
   padding: 7%;
-  background-image: url("../images/smash_art.jpg");
+  background-image: url("../../public/images/smash_art.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

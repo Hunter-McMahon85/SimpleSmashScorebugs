@@ -12,10 +12,26 @@ const ScorebugSelect = () => {
                 <div class="navbar">
                     <nav class="topnav">
                         <ul class="navitems">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="howtouse">How to Use</a></li>
-                            <li><a href="scorebugs">Scorebugs</a></li>
-                            <li><a href="about">About</a></li>
+                        <li>
+                                <Link to="/">
+                                    Home
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/howtouse">
+                                    How to Use
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/scorebugs">
+                                    Scorebugs
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/about">
+                                    About
+                                </Link>
+                            </li>
                         </ul>
                     </nav>
                 </div>
