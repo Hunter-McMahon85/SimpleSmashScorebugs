@@ -1,5 +1,5 @@
 import React from "react";
-import {HashRouter as Router, Route, Routes } from "react-router-dom";
+import {HashRouter, Route, Routes } from "react-router-dom";
 import Controller from "./Pages/scorecontroller";
 import Landing from "./Pages/landing";
 import Comms from "./Components/NTZ/comms";
@@ -12,7 +12,7 @@ import Scoreboard from "./Pages/scoreboard";
 
 function App() {
   return (
-    <Router basename="/SimpleSmashScorebugs">
+    <HashRouter basename="/SimpleSmashScorebugs">
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/scoreboard" element={<Scoreboard />} />
@@ -22,7 +22,7 @@ function App() {
         <Route path="/controller" element={<Controller />} />
         <Route path="/comms" element={<Comms />} />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 }
 
