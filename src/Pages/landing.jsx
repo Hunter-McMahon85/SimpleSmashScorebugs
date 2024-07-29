@@ -35,7 +35,6 @@ const Landing = () => {
                     </p>
                     <p>Learn how to get started by clicking here</p>
                     <p>To view scorebugs, click here</p>
-                    <p>this text is just to force a new github deplyment </p>
                 </div>
             </div>
         </>
