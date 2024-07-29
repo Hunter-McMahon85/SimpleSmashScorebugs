@@ -9,10 +9,10 @@ const Landing = () => {
                 <div class="navbar">
                     <nav class="topnav">
                         <ul class="navitems">
-                            <li><a href="/">Home</a></li>
-                            <li><a href="howtouse">How to Use</a></li>
-                            <li><a href="scorebugs">Scorebugs</a></li>
-                            <li><a href="about">About</a></li>
+                            <li><a href="/SimpleSmashScorebugs">Home</a></li>
+                            <li><a href="/SimpleSmashScorebugs/howtouse">How to Use</a></li>
+                            <li><a href="/SimpleSmashScorebugs/scorebugs">Scorebugs</a></li>
+                            <li><a href="/SimpleSmashScorebugs/about">About</a></li>
                         </ul>
                     </nav>
                 </div>
