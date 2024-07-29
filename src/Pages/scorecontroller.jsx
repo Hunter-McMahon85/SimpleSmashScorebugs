@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Names from "../Components/namesinput";
 import "../css/control.css"
 
@@ -62,7 +63,13 @@ function Controller() {
         <h2>Round INFO</h2>
         <button onClick={() => Show_MU()}>Show Matchup</button>
         <br />
-        <Names/>
+        <Names />
+        <br />
+        <Link to="/scorebugs">
+          <button className="bugselect">
+            Change Theme
+          </button>
+        </Link>
       </div>
     </>
   );

@@ -32,7 +32,7 @@ const ScorebugSelect = () => {
                         </button>
                     </Link>
                     <Link to="/controller">
-                        <button className="themebutton" onClick={() => { HandleSelection("Duck Hunt"); }}>
+                        <button className="themebutton" onClick={() => { HandleSelection("DH"); }}>
                             Duck Hunt
                         </button>
                     </Link>

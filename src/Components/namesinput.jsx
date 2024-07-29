@@ -235,6 +235,7 @@ function Names() {
 
   const GMode = (x) => {
     localStorage.setItem("gm", x);
+    localStorage.setItem("ScoreboardType", "h");
   };
 
   function HandleEntry() {

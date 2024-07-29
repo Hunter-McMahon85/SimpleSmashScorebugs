@@ -22,6 +22,9 @@ const HowToUse = () => {
 
                 <div class="instructions">
                 <p>The Gist of this Setup is that you will be adding an controller webpage to OBS as a custom browser Dock and a scoreboard page as a source in OBS</p>
+                <p>Step 1. Add the scorebugs page to OBS as a custom browser dock</p>
+                <p>Step 2. Add the page /scoreboard to OBS as a browser Source</p>
+                <p>Step 3. select a scorebugs page, this will open the controller page. at this point, refresh the browser source for the scoreboard page</p>
                 </div>
             </div>
         </>

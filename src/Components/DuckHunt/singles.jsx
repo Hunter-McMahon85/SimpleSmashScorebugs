@@ -46,18 +46,18 @@ const Singles = () => {
     <>
       <div className={`singlecontain ${isAnimated ? "slide-in" : ""}`}>
         <div className="singleoverlay">
-          <div className="container diamond-shape">
-            <div className="item-count">
-              <h4>{RoundName}</h4>
-              <h4 className="pool">{PoolName}</h4>
-            </div>
-          </div>
           <div className="gamers">
             <div className="gamer">
               <img src={Char11} alt="" />
               <h1 className="tag">{P11}</h1>
               <h1 className="pronoun">{Pronoun11}</h1>
               <h1 className="score">{P1Score}</h1>
+            </div>
+            <div className="container diamond-shape">
+              <div className="item-count">
+                <h4>{RoundName}</h4>
+                <h4 className="pool">{PoolName}</h4>
+              </div>
             </div>
             <div className="gamer">
               <img src={Char21} alt="" />

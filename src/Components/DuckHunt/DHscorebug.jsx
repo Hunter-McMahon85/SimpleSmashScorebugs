@@ -4,7 +4,7 @@ import ScoreboardDuo from "./doubles.jsx";
 import MatchStart1 from "./matchstart1.jsx";
 import MatchStart2 from "./matchstart2.jsx";
 
-function NTZScoreBug() {
+function DHScoreBug() {
   
   const [ScoreType, setScoreType] = useState("");
   const [PrevScoreType, setPrevScoreType] = useState("");
@@ -57,4 +57,4 @@ function NTZScoreBug() {
   );
 }
 
-export default NTZScoreBug;
+export default DHScoreBug;
