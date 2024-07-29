@@ -14,13 +14,13 @@ function App() {
   return (
     <Router basename="/SimpleSmashScorebugs">
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/scoreboard" element={<Scoreboard />} />
-        <Route path="/howtouse" element={<HowToUse />} />
-        <Route path="/scorebugs" element={<ScorebugSelect/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/controller" element={<Controller />} />
-        <Route path="/comms" element={<Comms />} />
+        <Route path="/SimpleSmashScorebugs" element={<Landing />} />
+        <Route path="/SimpleSmashScorebugs/scoreboard" element={<Scoreboard />} />
+        <Route path="/SimpleSmashScorebugs/howtouse" element={<HowToUse />} />
+        <Route path="/SimpleSmashScorebugs/scorebugs" element={<ScorebugSelect/>} />
+        <Route path="/SimpleSmashScorebugs/about" element={<About/>} />
+        <Route path="/SimpleSmashScorebugs/controller" element={<Controller />} />
+        <Route path="/SimpleSmashScorebugs/comms" element={<Comms />} />
       </Routes>
     </Router>
   );
