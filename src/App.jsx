@@ -12,15 +12,15 @@ import Scoreboard from "./Pages/scoreboard";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/SimpleSmashScorebugs">
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/scoreboard" element={<Scoreboard />} />
-        <Route path="/howtouse" element={<HowToUse />} />
-        <Route path="/scorebugs" element={<ScorebugSelect/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/controller" element={<Controller />} />
-        <Route path="/comms" element={<Comms />} />
+        <Route path="./" element={<Landing />} />
+        <Route path="./scoreboard" element={<Scoreboard />} />
+        <Route path="./howtouse" element={<HowToUse />} />
+        <Route path="./scorebugs" element={<ScorebugSelect/>} />
+        <Route path="./about" element={<About/>} />
+        <Route path="./controller" element={<Controller />} />
+        <Route path="./comms" element={<Comms />} />
       </Routes>
     </Router>
   );
