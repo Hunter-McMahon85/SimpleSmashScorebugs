@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../css/NTZ/singles.css";
+import "../../css/DuckHunt/singles.css";
 
 const Singles = () => {
   //this has to be done in every function because of the way conditional rendering is handled in scoreboard.js
@@ -44,31 +44,30 @@ const Singles = () => {
 
   return (
     <>
-      <div className={`singlecontain ${isAnimated ? "slide-in" : ""}`}>
-        <div className="singleoverlay">
-          <div className="gamers">
-            <div className="gamer">
-              <img src={Char11} alt="" />
-              <h1 className="tag">{P11}</h1>
-              <h1 className="pronoun">{Pronoun11}</h1>
-              <h1 className="score">{P1Score}</h1>
-            </div>
-            <div className="container diamond-shape">
-              <div className="item-count">
-                <h4>{RoundName}</h4>
-                <h4 className="pool">{PoolName}</h4>
-              </div>
-            </div>
-            <div className="gamer">
-              <img src={Char21} alt="" />
-              <h1 className="tag">{P21}</h1>
-              <h1 className="pronoun">{Pronoun21}</h1>
-              <h1 className="score">{P2Score}</h1>
-            </div>
+      <div className={`DHsinglecontain ${isAnimated ? "slide-in" : ""}`}>
+        <div className="DHsingleoverlay">
+
+          <div className="DHgamer">
+            <h1 className="DHscore">{P1Score}</h1>
+            <h1 className="DHtag">{P11}</h1>
+            <h1 className="DHpronoun">{Pronoun11}</h1>
+            <img src={Char11} alt="" />
+          </div>
+
+          <div className="DHinfo">
+            <h4>{RoundName}</h4>
+            <h4 className="DHpool">{PoolName}</h4>
+          </div>
+
+          <div className="DHgamer">
+            <img src={Char21} alt="" />
+            <h1 className="DHtag">{P21}</h1>
+            <h1 className="DHpronoun">{Pronoun21}</h1>
+            <h1 className="DHscore">{P2Score}</h1>
           </div>
 
         </div>
-      </div >
+      </div>
     </>
   );
 };

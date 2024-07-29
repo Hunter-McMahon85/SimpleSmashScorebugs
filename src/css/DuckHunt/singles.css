@@ -1,8 +1,18 @@
-@import url("https://use.typekit.net/qjx6azk.css");
+@font-face {
+  font-family: pixel;
+  src: url(Silkscreen-Regular.ttf);
+}
 
-.singlecontain {
-  max-width: 100vw;
-  max-height: 100vh;
+@font-face {
+  font-family: pixelbold;
+  src: url(Silkscreen-Bold.ttf);
+}
+
+.DHsinglecontain {
+  width: 1920px;
+  height: 1080px;
+  display: flex;
+  justify-content: center;
 
   /* Set initial position to top of the screen */
   transform: translateY(-100%);
@@ -26,53 +36,20 @@
   }
 }
 
-.singleoverlay {
+.DHsingleoverlay {
+  width: 75%;
+  height: 80px;
   display: flex;
-  width: 100%;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  font-family: "futura-pt", sans-serif;
-  font-weight: 800;
+  font-size: 30px;
 
-}
-
-.singleoverlay h1 {
-  height: 100%;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.gamer {
-  display: flex;
-  align-items: center;
-  border: black solid 3px;
-  background-color: #5EAE33;
+  background-color: black;
+  font-family: pixel;
   color: white;
-}
 
-.gamer h1 {
-  font-size: larger;
-}
-
-.tag {
-  width: 53%;
-}
-
-.score {
-  width: 10%;
-  padding: 11px 0px;
-  text-align: center;
-  height: fit-content;
-  color: black;
-  background-color: yellow;
-  border-left: black solid 3px;
-}
-
-.pronoun {
-  width: 17%;
-  text-align: center;
-  font-size: x-large;
+  border: solid;
+  border-color: #75cb0b;
+  border-width: 6px;
+  border-radius: 8px;
 }
 
 h4 {
@@ -80,33 +57,41 @@ h4 {
   text-align: center;
 }
 
-.diamond-shape {
-  background: yellow;
-  height: 124px;
-  text-align: center;
-  transform:rotate(45deg);
-	width:128px;
-  border: black solid 3px;
-}
-.item-count {
-  color: #333;
-  display: table-cell;
-  height: 128px;
-  transform: rotate(-45deg);
-  vertical-align: middle;
-	width:128px;
+.DHinfo {
+  width: 32%;
+  color: #32b5fc;
 }
 
-.gamers {
-  width: 40%;
-  margin-left: -5%;
-  border: black solid 3px;
-  border-radius: 10px;
+.DHgamer {
+  display: flex;
+  align-items: center;
+  width: 34%;
 }
 
-.gamer img {
-  margin-left: 13%;
+.DHgamer img {
+  margin-left: 0;
   width: 50px;
   height: 50px;
 }
 
+.DHpronoun {
+  width: 30%;
+}
+
+.DHscore {
+  width: 10%;
+  font-size: 50px;
+  color: #75cb0b;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+  font-family: pixelbold;
+}
+
+.DHtag {
+  width: 50%;
+}
+
+.DHgamer h1 {
+  font-size: x-large;
+}
