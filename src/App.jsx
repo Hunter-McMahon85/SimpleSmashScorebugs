@@ -12,7 +12,7 @@ import Scoreboard from "./Pages/scoreboard";
 
 function App() {
   return (
-    <Router>
+    <Router basename="/SimpleSmashScorebugs">
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/scoreboard" element={<Scoreboard />} />
