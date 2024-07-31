@@ -1,58 +1,30 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import NavBar from "../Components/navbar";
 import '../css/Landing.css'
 
 const Landing = () => {
-
     return (
         <>
-            <div class="landcontain">
-                <div class="navbar">
-                    <nav class="topnav">
-                        <ul class="navitems">
-                            <li>
-                                <Link to="/">
-                                    Home
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/howtouse">
-                                    How to Use
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/scorebugs">
-                                    Scorebugs
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/about">
-                                    About
-                                </Link>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="title">
+            <div className="landcontain">
+                <NavBar></NavBar>
+                <div className="title">
                     <h1>SIMPLE SMASH SCOREBUGS</h1>
                 </div>
                 <h2>Info</h2>
 
-                <div class="instructions">
-                    <ul class="navitems">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="scoreboard">Scoreboard</a></li>
-                        <li><a href="controller">Controller</a></li>
-                        <li><a href="comms">Commentator Overlay</a></li>
-                    </ul>
-                    <p>This web app intends to provide a simple, easy to use score bug overlay for smash bros events.
-                        Other overlays require unneeded downloads when in reality it is just an webpage and some interface you are running locally on your machine.
-                        On the Other hand Simple Smash scorebugs utilizes the Custom Browser Docks feature of OBS to provide a download free scorebug overlay for your smash bros stream.
-                        Additionally, we provide integration with the start.gg api and its Stream Queue feature to allow you to automatically fetch tags for your scoebugs reducing downtime between games.
-                    </p>
-                    <p>Learn how to get started by clicking here</p>
-                    <p>To view scorebugs, click here</p>
-                    <p>To view scorebugs, click here</p>
+                <div className="instructions">
+                    <div className='InstructionContent'>
+                        <p>
+                            Simple Smash Scorebugs provides a simple, download free, overlay solution for your Super Smash Bros ultimate Streams.
+                            <br />
+                            Using ths custom browser docks feature of OBS, we are able to provide a web based solution for your scorebug needs.
+                            Additonally, our scorebugs allow you to use the start.gg API to automatically fetch match data. This helps reduce downtime
+                            between matches on your stream allowing for a smoother event and viewer experience
+                        </p>
+                        <p>Learn how to get started by clicking here</p>
+                        <p>To view our scorebug templates, click here</p>
+                    </div>
                 </div>
             </div>
         </>
