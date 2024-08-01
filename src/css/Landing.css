@@ -83,6 +83,7 @@ h2 {
   text-align: left;
   padding-left: 1%;
   padding-right: 1%;
+  padding-top: 1%;
   background-color: lightblue;
   border: 5px solid lightgray;
   border-radius: 5px;
@@ -97,8 +98,57 @@ h2 {
   padding-top: 10px;
 }
 
-.instructions img {
-  margin-left: 30px;
-  width: 60%;
-  height: 40%;
+.themebuttons {
+  display: flex;
+  justify-content: space-evenly; 
+  align-items: center; 
+  padding: 20px; 
+  flex-wrap: wrap;
+}
+
+
+.themebutton {
+  width: 200px; 
+  height: 100px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border: none;
+  background-color: #007bff; 
+  color: white;
+  cursor: pointer;
+  border-radius: 8px; 
+  transition: background-color 0.3s;
+}
+
+.themebutton:hover {
+  background-color: #0056b3; 
+}
+
+.button-image {
+  width: 195px; 
+  height: 40px;
+  margin-left: 0;
+  margin-bottom: 30px;
+}
+
+.instructbutton 
+{
+  width: 150px; 
+  height: 100px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #007bff; 
+  color: white;
+  cursor: pointer;
+  border-radius: 8px; 
+  transition: background-color 0.3s;
+}
+
+.instructbutton:hover {
+  background-color: #0056b3; 
 }

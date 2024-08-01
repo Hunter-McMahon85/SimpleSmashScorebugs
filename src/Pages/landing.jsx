@@ -22,8 +22,8 @@ const Landing = () => {
                             Additonally, our scorebugs allow you to use the start.gg API to automatically fetch match data. This helps reduce downtime
                             between matches on your stream allowing for a smoother event and viewer experience
                         </p>
-                        <p>Learn how to get started by clicking here</p>
-                        <p>To view our scorebug templates, click here</p>
+                        <p>Learn how to get started by <Link to="/howtouse">clicking here</Link></p>
+                        <p>To view our scorebug templates, <Link to="/scorebugs">click here</Link></p>
                     </div>
                 </div>
             </div>
