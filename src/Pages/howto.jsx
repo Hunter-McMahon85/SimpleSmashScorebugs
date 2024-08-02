@@ -1,12 +1,28 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../Components/navbar";
 import '../css/Landing.css'
-import NTZScoreBug from "../Components/NTZ/NTZscorebug";
+import Initial from "../Components/Tutorials/initial";
+import SggAPI from "../Components/Tutorials/sggAPI";
+import OBSchange from "../Components/Tutorials/obschange";
 
 const HowToUse = () => {
-    let CurrentTutorial;
+    const [CurrentTutorial, setCurrentTutorial] = useState("");
+
     const HandleSelection = (B) => {
-        CurrentTutorial = B;
+        switch (B) {
+            case "i":
+                setCurrentTutorial(<Initial />);
+                break;
+            case "obs":
+                setCurrentTutorial(<OBSchange />);
+                break;
+            case "api":
+                setCurrentTutorial(<SggAPI />);
+                break;
+            default:
+                break;
+        }
+
     }
 
     return (
@@ -16,20 +32,22 @@ const HowToUse = () => {
                 <div class="title">
                     <h1>SIMPLE SMASH SCOREBUGS</h1>
                 </div>
-                <h2>How To Use</h2>
+                <h2 className="ttitle">How To Use</h2>
 
-                <div class="instructions">
+                <div className="instructions">
+                    <h3>Select a tutorial to get Started</h3>
                     <div className="themebuttons">
-                        <button className="instructbutton" onClick={() => { CurrentTutorial = <NTZScoreBug />; }}>
+                        <button className="instructbutton" onClick={() => { HandleSelection("i"); }}>
                             Initial Setup
                         </button>
-                        <button className="instructbutton" onClick={() => { HandleSelection("DH"); }}>
+                        <button className="instructbutton" onClick={() => { HandleSelection("obs"); }}>
                             Changing Theme from OBS
                         </button>
-                        <button className="instructbutton" onClick={() => { HandleSelection("DH"); }}>
+                        <button className="instructbutton" onClick={() => { HandleSelection("api"); }}>
                             Using the Start.GG API
                         </button>
                     </div>
+
                     <div className="TutorialContain">{CurrentTutorial}</div>
 
 

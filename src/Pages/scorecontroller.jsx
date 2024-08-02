@@ -53,6 +53,11 @@ function Controller() {
   return (
     <>
       <div className="UI_Contain">
+      <Link to="/scorebugs">
+          <button className="bugselect">
+            Change Theme
+          </button>
+        </Link>
         <div className="scoring">
           <button onClick={() => score(1, 1)}>Win Top</button>
 
@@ -65,11 +70,6 @@ function Controller() {
         <br />
         <Names />
         <br />
-        <Link to="/scorebugs">
-          <button className="bugselect">
-            Change Theme
-          </button>
-        </Link>
       </div>
     </>
   );
