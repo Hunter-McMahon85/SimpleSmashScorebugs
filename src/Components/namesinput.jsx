@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Autocomplete from "react-autocomplete-input";
 import "react-autocomplete-input/dist/bundle.css";
 import entered_name from "./charnames";
 import names_list_in_files from "./charfilenames";
+import oauthConfig from "./oauthConfig";
 
 function Names() {
   const endpoint = "https://api.start.gg/gql/alpha"
@@ -402,6 +404,12 @@ function Names() {
     set_data();
   }
 
+  const login = () => {
+    const authUrl = `${oauthConfig.auth_endpoint}?response_type=${oauthConfig.response_type}&client_id=${oauthConfig.client_id}&redirect_uri=${encodeURIComponent(oauthConfig.redirect_uri)}&scope=${encodeURIComponent(oauthConfig.scope)}`;
+    console.log('redir 1')
+    window.location.href = authUrl;
+  };
+
   return (
     <>
 
@@ -425,6 +433,8 @@ function Names() {
       />
 
       <h2>Player Tags</h2>
+
+      <button onClick={login}>Login with OAuth</button>
 
       <input
         type="text"

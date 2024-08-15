@@ -7,6 +7,7 @@ import About from "./Pages/about";
 import HowToUse from "./Pages/howto";
 import ScorebugSelect from "./Pages/scorebugs";
 import Scoreboard from "./Pages/scoreboard";
+import Callback from "./Pages/callback";
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/controller" element={<Controller />} />
       <Route path="/comms" element={<Comms />} />
+      <Route path="/TokenAuth" element={<Callback />} />
     </Routes>
   );
 }
