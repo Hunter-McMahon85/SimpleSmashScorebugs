@@ -18,7 +18,7 @@ const Callback = () => {
 
   const exchangeAuthorizationCode = async (authorizationCode) => {
     try {
-      const response = await axios.post("https://api.cors.lol/url=https://api.start.gg/oauth/access_token", {
+      const response = await axios.post('https://cors-anywhere.herokuapp.com/https://api.start.gg/oauth/access_token', {
         grant_type: 'authorization_code',
         client_id: oauthConfig.client_id,
         client_secret: oauthConfig.Cs,
