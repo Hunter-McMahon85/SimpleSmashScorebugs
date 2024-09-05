@@ -36,7 +36,7 @@ const Callback = () => {
     }
   }, [navigate]);
 
-  return <div>Loading...</div>;
+  return <div>Loading... {data.access_token}</div>;
 };
 
 export default Callback;
