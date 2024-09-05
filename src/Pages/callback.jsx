@@ -26,7 +26,7 @@ const Callback = () => {
         .then(response => response.json())
         .then(data => {
           // Save the token in localStorage or state
-          console.log("reached callback")
+          console.log(data.access_token);
           localStorage.setItem('access_token', data.access_token);
           navigate('/'); // Redirect to home or dashboard
         })
