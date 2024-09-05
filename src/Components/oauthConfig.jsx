@@ -5,6 +5,7 @@ const oauthConfig = {
     token_endpoint: 'http://api.start.gg/oauth/access_token',
     response_type: 'code', 
     scope: 'user.identity', 
+    Cs: '0bfa19a60caef6e193585ef93f8774136531e6e2fbcdba962c134a9470a89194',
 };
 
 export default oauthConfig;
