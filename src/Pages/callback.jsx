@@ -15,11 +15,10 @@ const Callback = () => {
       exchangeAuthorizationCode(authorizationCode);
     }
   }, [location]);
-  const url = 'https://corsproxy.io/?' + encodeURIComponent('https://api.start.gg/oauth/access_token');
 
   const exchangeAuthorizationCode = async (authorizationCode) => {
     try {
-      const response = await axios.post(url, {
+      const response = await axios.post("https://cors-proxy.htmldriven.com/?url=https://api.start.gg/oauth/access_token", {
         grant_type: 'authorization_code',
         client_id: oauthConfig.client_id,
         client_secret: oauthConfig.Cs,
