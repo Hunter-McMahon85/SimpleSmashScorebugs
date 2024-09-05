@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import oauthConfig from '../Components/oauthConfig';
 
 const Callback = () => {
-  console.log("reached callback")
   const navigate = useNavigate();
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -27,6 +26,7 @@ const Callback = () => {
         .then(response => response.json())
         .then(data => {
           // Save the token in localStorage or state
+          console.log("reached callback")
           localStorage.setItem('access_token', data.access_token);
           navigate('/'); // Redirect to home or dashboard
         })

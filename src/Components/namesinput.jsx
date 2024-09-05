@@ -406,7 +406,7 @@ function Names() {
 
   const Cs = '0bfa19a60caef6e193585ef93f8774136531e6e2fbcdba962c134a9470a89194';
   const login = () => {
-    const authUrl = `${oauthConfig.auth_endpoint}?response_type=${oauthConfig.response_type}&client_id=${oauthConfig.client_id}&scope=${encodeURIComponent(oauthConfig.scope)}&redirect_uri=&client_secret=${Cs}`;
+    const authUrl = `https://start.gg/oauth/authorize?response_type=code&client_id=175&scope=user.identity%20user.email&redirect_uri=${encodeURIComponent(oauthConfig.redirect_uri)}`;
     console.log('redir 1')
     window.location.href = authUrl;
   };
