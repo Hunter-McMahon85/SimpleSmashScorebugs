@@ -18,7 +18,7 @@ const Callback = () => {
 
   const exchangeAuthorizationCode = async (authorizationCode) => {
     try {
-      const response = await axios.post("https://corsproxy.io/?https%3A%2F%2Fapi.start.gg%2Foauth%2Faccess_token", {
+      const response = await axios.post("https://api.cors.lol/url=https://api.start.gg/oauth/access_token", {
         grant_type: 'authorization_code',
         client_id: oauthConfig.client_id,
         client_secret: oauthConfig.Cs,
