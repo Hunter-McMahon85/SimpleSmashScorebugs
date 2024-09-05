@@ -36,7 +36,7 @@ const Callback = () => {
       localStorage.setItem('refresh_token', refresh_token);
 
       // Redirect to a protected page after successful login
-      navigate('/');
+      navigate('/controller');
     } catch (error) {
       console.error('Error exchanging code for token:', error);
     }

@@ -9,7 +9,7 @@ import oauthConfig from "./oauthConfig";
 function Names() {
   const endpoint = "https://api.start.gg/gql/alpha"
   // hell but neccessary
-  const [Token, setToken] = useState("");
+  const [Token, setToken] = useState(localStorage.getItem("access_token"));
   const [Streamer, setStreamer] = useState("");
   const [Slug, setSlug] = useState("");
 
@@ -290,11 +290,6 @@ function Names() {
     console.log(Streamer);
   }
 
-  const handleToken = (event) => {
-    setToken(event.target.value);
-    console.log(Token);
-  }
-
   const handleSlug = (event) => {
     setSlug(event.target.value);
     console.log(Slug);
@@ -435,12 +430,7 @@ function Names() {
       <h2>Player Tags</h2>
 
       <button onClick={login}>Login with OAuth</button>
-
-      <input
-        type="text"
-        placeholder="Enter API Token"
-        onChange={handleToken}
-      />
+      
       <br />
       <input
         type="text"
