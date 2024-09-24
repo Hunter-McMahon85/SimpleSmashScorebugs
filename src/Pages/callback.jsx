@@ -28,6 +28,7 @@ const Callback = () => {
         scope: 'user.identity user.email',
       }, {
         headers: {
+          'Access-Control-Allow-Origin': '*',
           'Content-Type': 'application/json',
         }
       });
