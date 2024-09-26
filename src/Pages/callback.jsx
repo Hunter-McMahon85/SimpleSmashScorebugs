@@ -19,7 +19,7 @@ const Callback = () => {
   const exchangeAuthorizationCode = async (authorizationCode) => {
     try {
       // need a better cors proxy solution. this will only work for testing
-      const response = await axios.post('https://api.start.gg/oauth/access_token', {
+      const response = await axios.post('https://shy-disk-9135.gochargershunter.workers.dev/https://api.start.gg/oauth/access_token', {
         grant_type: 'authorization_code',
         client_id: oauthConfig.client_id,
         client_secret: oauthConfig.Cs,
