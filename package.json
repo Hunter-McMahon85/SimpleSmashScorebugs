@@ -2,7 +2,7 @@
   "name": "simplesmashscorebugs",
   "private": true,
   "version": "0.0.0",
-  "homepage": "simplesmashscorebugs.com",
+  "homepage": "www.simplesmashscorebugs.com",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
