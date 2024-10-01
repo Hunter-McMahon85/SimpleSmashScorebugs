@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import NavBar from "../Components/navbar";
+import Foot from "../Components/footer";
 import '../css/Landing.css'
 
 const About = () => {
@@ -60,9 +61,8 @@ const About = () => {
                         </p>
                     </div>
                 </div>
+                <Foot></Foot>
             </div>
-
-
         </>
     );
 }

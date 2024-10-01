@@ -4,6 +4,7 @@ import '../css/Landing.css'
 import Initial from "../Components/Tutorials/initial";
 import SggAPI from "../Components/Tutorials/sggAPI";
 import OBSchange from "../Components/Tutorials/obschange";
+import Foot from "../Components/footer";
 
 const HowToUse = () => {
     const [CurrentTutorial, setCurrentTutorial] = useState("");
@@ -52,6 +53,7 @@ const HowToUse = () => {
 
 
                 </div>
+                <Foot></Foot>
             </div >
         </>
     );

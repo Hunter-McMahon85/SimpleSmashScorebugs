@@ -414,22 +414,10 @@ function Names() {
       <br />
       <button onClick={() => GMode("H")}>Hide</button>
       <br />
-      <input
-        type="text"
-        value={RoundName}
-        placeholder="round"
-        onChange={handleRound}
-      />
-      <input
-        type="text"
-        value={PoolName}
-        placeholder="pool"
-        onChange={handlePool}
-      />
 
-      <h2>Player Tags</h2>
+      <h2>Start.gg Stream Queue</h2>
 
-      <button onClick={login}>Login with OAuth</button>
+      <button onClick={login}>Login with Start.gg</button>
       
       <br />
       <input
@@ -446,6 +434,22 @@ function Names() {
       <br />
 
       <button onClick={() => FetchQueue()}>Fetch From Stream Queue</button>
+
+      <h2>Manual Entry</h2>
+
+      <input
+        type="text"
+        value={RoundName}
+        placeholder="round"
+        onChange={handleRound}
+      />
+      
+      <input
+        type="text"
+        value={PoolName}
+        placeholder="pool"
+        onChange={handlePool}
+      />
 
       <h3>Player/Duo 1:</h3>
       <input

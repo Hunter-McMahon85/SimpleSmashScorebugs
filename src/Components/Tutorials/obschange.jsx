@@ -10,9 +10,9 @@ const OBSchange = () => {
                     Changing the theme
                 </h3>
                 <ol>
-                    <li>From the controler page, click the button labeled "Change Theme", this will return you to the scorebug select page.</li>
+                    <li>From the controler page, click the button "Change Theme", this will return you to the scorebug Selection page.</li>
                     <li>select a new theme</li>
-                    <li>refresh the browser source page in the sources panel of OBS, the new singles scorebug for the theme should appear</li>
+                    <li>refresh the browser source page in the sources panel of OBS, the new scorebug theme should appear</li>
                 </ol>
             </div>
         </>

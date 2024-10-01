@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Foot from "../Components/footer";
 import NavBar from "../Components/navbar";
 import '../css/Landing.css'
 
@@ -36,6 +37,7 @@ const ScorebugSelect = () => {
                         </div>
                     </div>
                 </div>
+                <Foot></Foot>
             </div>
         </>
     );

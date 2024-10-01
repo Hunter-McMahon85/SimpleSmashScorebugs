@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 import NavBar from "../Components/navbar";
+import Foot from '../Components/footer';
 import '../css/Landing.css'
 
 const Landing = () => {
@@ -26,6 +27,7 @@ const Landing = () => {
                         <p>To view our scorebug templates, <Link to="/scorebugs">click here</Link></p>
                     </div>
                 </div>
+                <Foot></Foot>
             </div>
         </>
     )

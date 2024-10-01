@@ -59,13 +59,15 @@ function Controller() {
           </button>
         </Link>
         <div className="scoring">
-          <button onClick={() => score(1, 1)}>Win Top</button>
+        <h2>Scoring</h2>
+          <button onClick={() => score(1, 1)}>Win Player/Duo 1</button>
 
-          <button onClick={() => score(2, 1)}>Win Bottom</button>
+          <button onClick={() => score(2, 1)}>Win Player/Duo 2</button>
 
           <button onClick={() => reset_scores()}>Reset Score</button>
         </div>
-        <h2>Round INFO</h2>
+        <p>*player/duo 1 will always be the leftmost or topmost tag on the scorebug</p>
+        <h2>Scorebug Visuals</h2>
         <button onClick={() => Show_MU()}>Show Matchup</button>
         <br />
         <Names />
