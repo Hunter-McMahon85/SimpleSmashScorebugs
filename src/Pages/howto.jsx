@@ -35,23 +35,25 @@ const HowToUse = () => {
                 </div>
                 <h2 className="ttitle">How To Use</h2>
 
-                <div className="instructions">
-                    <h3>Select a tutorial to get Started</h3>
-                    <div className="themebuttons">
-                        <button className="instructbutton" onClick={() => { HandleSelection("i"); }}>
-                            Initial Setup
-                        </button>
-                        <button className="instructbutton" onClick={() => { HandleSelection("obs"); }}>
-                            Changing Theme from OBS
-                        </button>
-                        <button className="instructbutton" onClick={() => { HandleSelection("api"); }}>
-                            Using the Start.GG API
-                        </button>
+                <div className='content'>
+                    <div className="instructions">
+                        <h3>Select a tutorial to get Started</h3>
+                        <div className="themebuttons">
+                            <button className="instructbutton" onClick={() => { HandleSelection("i"); }}>
+                                Initial Setup
+                            </button>
+                            <button className="instructbutton" onClick={() => { HandleSelection("obs"); }}>
+                                Changing Theme from OBS
+                            </button>
+                            <button className="instructbutton" onClick={() => { HandleSelection("api"); }}>
+                                Using the Start.GG API
+                            </button>
+                        </div>
+
+                        <div className="TutorialContain">{CurrentTutorial}</div>
+
+
                     </div>
-
-                    <div className="TutorialContain">{CurrentTutorial}</div>
-
-
                 </div>
                 <Foot></Foot>
             </div >

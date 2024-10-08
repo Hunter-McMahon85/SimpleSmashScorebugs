@@ -8,6 +8,8 @@ import HowToUse from "./Pages/howto";
 import ScorebugSelect from "./Pages/scorebugs";
 import Scoreboard from "./Pages/scoreboard";
 import Callback from "./Pages/callback";
+import PP from "./Pages/privacypolicy";
+import Terms from "./Pages/Terms";
 
 
 
@@ -22,6 +24,8 @@ function App() {
       <Route path="/controller" element={<Controller />} />
       <Route path="/comms" element={<Comms />} />
       <Route path="/TokenAuth" element={<Callback />} />
+      <Route path="/PrivacyPolicy" element={<PP />} />
+      <Route path="/TOS" element={<Terms />} />
     </Routes>
   );
 }

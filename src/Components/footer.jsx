@@ -5,7 +5,7 @@ import '../css/Landing.css'
 const Foot = () => {
     return (
         <>
-            <div className="footer">
+            <div className="foot">
                 <footer>
                     <ul>
                         <li>
@@ -14,7 +14,7 @@ const Foot = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/Privacy Policy">
+                            <Link to="/PrivacyPolicy">
                                 Privacy Policy
                             </Link>
                         </li>
