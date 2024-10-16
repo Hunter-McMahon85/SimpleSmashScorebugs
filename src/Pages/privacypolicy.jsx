@@ -16,10 +16,14 @@ const PP = () => {
                     <div className="instructions">
                         <div className='InstructionContent'>
                             <p>
-                                Information such as your start.gg email account and username may be shared with simplesmashscorebugs if you choose to use our start.gg api integration. This data is used to obtain an access token to make API request to the start.gg api and is not collected by simplesmashscorebugs. This info is stored in your web browsers local Storage and can be deleted by clearing your browser cache/cookie history.
-                                <br/>
-                                <br/>
-                                At the moment of this policies current drafting, there may not be google adsense or other advertising materials on the site. However there is intent to add these to the webpage in the future and said services may utilize 3rd party trackers and cookies to target advertising. 
+                                When signing in with start.gg, you consent to simplesmashscorebugs making API request to the start.gg api on your behalf.
+                                Information such as your start.gg email account and username may be shared with simplesmashscorebugs if you choose to sign in with start.gg's oauth.
+                                This Information is not collected by simplesmashscorebugs but is used to obtain an API token to make request on your behalf. 
+                                <br />
+                                <br />
+                                At the moment of this policies current drafting, there may not be google adsense or other advertising materials on the site. 
+                                However there is intent to add these to the webpage in the future and said services may utilize 3rd party trackers and cookies to target advertising. 
+                                While these currently are not presently, they may be added in the future.
                             </p>
                         </div>
                     </div>
