@@ -10,7 +10,7 @@ const Initial = () => {
                     Initial Setup Instructions
                 </h3>
                 <ol>
-                    <li>Copy the link to the Scorebugs Page: https://https://www.simplesmashscorebugs.com/#/scorebugs</li>
+                    <li>Copy the link to the Scorebugs Page: https://www.simplesmashscorebugs.com/#/scorebugs</li>
                     <li>Open Open Broadcasting Software Studio (OBS)</li>
                     <li>From the OBS topbar, click on "Docks" then on "Custom Browser Docks"</li>
                     <li>In the "Custom Browser Docks" menu that pops up, put an arbitrary name in the dock name section and past the link to the scorebugs page in the "URL" field and click apply</li>
@@ -20,7 +20,7 @@ const Initial = () => {
                     <li>
                         In the properties tab, do the following before clicking ok:
                         <ul>
-                            <li>set the URL field to be https://https://www.simplesmashscorebugs.com/#/scoreboard</li>
+                            <li>set the URL field to be https://www.simplesmashscorebugs.com/#/scoreboard</li>
                             <li>set the width to 1920px and height to 1080px. This is Smash ultimates native resolution, the scorebugs are hard set to match this resolution as your stream output should match this resolution</li>
                             <li>Delete the Custom CSS field</li>
                         </ul>
