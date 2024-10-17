@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../css/NTZ/doubles.css";
+import "../../css/DuckHunt/doubles.css";
 
 const ScoreboardDuo = () => {
   const [isAnimated, setIsAnimated] = useState(false);
@@ -59,45 +59,49 @@ const ScoreboardDuo = () => {
 
   return (
     <>
-      <div className={`doublecontain ${isAnimated ? "slide-in" : ""}`}>
-        <div className="doubleoverlay">
+      <div className={`DHsinglecontain ${isAnimated ? "slide-in" : ""}`}>
+        <div className="DHduooverlay">
 
-          <div class="container diamond-shape">
-            <div class="item-count">
-              <h4>{Rname}</h4>
-              <h4 className="pool">{Pool}</h4>
+          <div className="dhDuo">
+            <h1 className="DHduoscore">{S1}</h1>
+            <div className="dhduoplayers">
+              <div className="DHduogamer">
+                <h1 className="DHduopronoun">{Pro11}</h1>
+                <h1 className="DHduotag">{P11}</h1>
+                <img src={C11} alt="" />
+              </div>
+              <div className="DHduogamer">
+                <h1 className="DHduopronoun">{Pro12}</h1>
+                <h1 className="DHduotag">{P12}</h1>
+                <img src={C12} alt="" />
+              </div>
             </div>
           </div>
 
-          <div className="gamers2">
-            <div className="gamer2">
-              <img className="lefticon" src={C11} alt="" />
-              <h1 className="tag2">{P11}</h1>
-              <h1 className="pronoun2">{Pro11}</h1>
+          <div className="DHDuoinfo">
+            <h4>{Rname}</h4>
+            <h4 className="DHDuopool">{Pool}</h4>
+          </div>
 
+          <div className="dhDuo">
+            <div className="dhduoplayers">
+              <div className="DHduogamer">
+                <img src={C21} alt="" />
+                <h1 className="DHduotag">{P21}</h1>
+                <h1 className="DHduopronoun">{Pro21}</h1>
 
-              <img src={C12} alt="" />
-              <h1 className="tag2">{P12}</h1>
-              <h1 className="pronoun2">{Pro12}</h1>
-
-              <h1 className="score2">{S1}</h1>
+              </div>
+              <div className="DHduogamer">
+                <img src={C22} alt="" />
+                <h1 className="DHduotag">{P22}</h1>
+                <h1 className="DHduopronoun">{Pro22}</h1>
+              </div>
             </div>
-            <div className="gamer2">
-              <img className="lefticon" src={C21} alt="" />
-              <h1 className="tag2">{P21}</h1>
-              <h1 className="pronoun2">{Pro21}</h1>
-
-
-              <img src={C22} alt="" />
-              <h1 className="tag2">{P22}</h1>
-              <h1 className="pronoun2">{Pro22}</h1>
-
-              <h1 className="score2">{S2}</h1>
-            </div>
+            <h1 className="DHduoscore">{S2}</h1>
           </div>
 
         </div>
-      </div>
+      </div >
     </>
   );
 };
