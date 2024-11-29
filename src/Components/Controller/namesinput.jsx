@@ -8,6 +8,8 @@ import oauthConfig from "./oauthConfig";
 
 function Names() {
   const endpoint = "https://api.start.gg/gql/alpha"
+  // hell but neccessary
+  const [Token, setToken] = useState(localStorage.getItem("access_token"));
   const [Streamer, setStreamer] = useState("");
   const [Slug, setSlug] = useState("");
 
@@ -403,7 +405,7 @@ function Names() {
       <h2>Start.gg Stream Queue</h2>
 
       <button onClick={login}>Login with Start.gg</button>
-
+      
       <br />
       <input
         type="text"
@@ -428,7 +430,7 @@ function Names() {
         placeholder="round"
         onChange={handleRound}
       />
-
+      
       <input
         type="text"
         value={PoolName}
