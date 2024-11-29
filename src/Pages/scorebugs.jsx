@@ -11,15 +11,15 @@ const ScorebugSelect = () => {
 
     return (
         <>
-            <div class="landcontain">
+            <div className="landcontain">
                 <NavBar></NavBar>
-                <div class="title">
+                <div className="title">
                     <h1>SIMPLE SMASH SCOREBUGS</h1>
                 </div>
                 <h2>ScoreBug Selection</h2>
 
                 <div className='content'>
-                    <div class="instructions">
+                    <div className="instructions">
                         <div className='InstructionContent'>
                             <h4>Select a scorebug by selecting a button below. To learn how to set up this utility, see the <Link to="/howtouse">How to Use</Link> page</h4>
                             <div className="themebuttons">

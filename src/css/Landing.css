@@ -38,7 +38,8 @@ body {
 
   .navitems li {
     display: inline;
-    margin: 0px 0px 0px 0px;
+    margin: 10px 15px 10px 15px;
+    padding: 0px 10px 0px 10px;
   }
 
   .navitems li a {
