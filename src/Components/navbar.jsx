@@ -5,7 +5,6 @@ import '../css/Landing.css'
 const NavBar = () => {
     return (
         <>
-
             <div className="navbar">
                 <nav className="topnav">
                     <ul className="navitems">

@@ -2,16 +2,23 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Names from "../Components/Controller/namesinput";
 import SQFetch from "../Components/Controller/StreamQueFetch";
+import StartMsg from "../Components/Controller/StartPopup";
 import "../css/control.css"
 
 function Controller() {
-  const [HideMSG, setHideMSG] = useState("Scorebug is Visible");
   let GM = "";
 
   let p1score = 0;
   let p2score = 0;
   localStorage.setItem("p1score", p1score);
   localStorage.setItem("p2score", p2score);
+  
+  const [HideMSG, setHideMSG] = useState("Scorebug is Visible");
+  const [ShowStartMSG, setShowStartMSG] = useState(true);
+
+  const handleCloseMSG = () => {
+    setShowStartMSG(false);
+  };
 
   function score(p, x) {
     if (p === 1) {
@@ -63,6 +70,7 @@ function Controller() {
 
   return (
     <>
+      {ShowStartMSG && <StartMsg onClose={handleCloseMSG} />}
       <div className="UI_Contain">
         <Link to="/scorebugs">
           <button className="bugselect">

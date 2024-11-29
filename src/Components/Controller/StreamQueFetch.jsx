@@ -8,6 +8,16 @@ function SQFetch() {
     const [Token, setToken] = useState(localStorage.getItem("access_token"));
     const [Streamer, setStreamer] = useState("");
     const [Slug, setSlug] = useState("");
+    const [LoginTXT, setLoginTXT] = useState("Login with Start.gg");
+    const [showFields, setshowFields] = useState(true);
+
+    const toggleSection = () => {
+        setshowFields(!showFields);
+    };
+
+    if (Token != null) {
+        setLoginTXT("Refresh Start.GG Login");
+    }
 
     const handleStream = (event) => {
         setStreamer(event.target.value);
@@ -133,22 +143,19 @@ function SQFetch() {
         <>
             <h2>Start.gg Stream Queue</h2>
 
-            <button onClick={login}>Login with Start.gg</button>
-
+            <button onClick={toggleSection}>
+                {showFields ? 'Hide Fields' : 'Show Fields'}
+            </button>
+            {showFields && (
+                <div>
+                    <button onClick={login}>{LoginTXT}</button>
+                    <br />
+                    <input type="text" placeholder="Enter Tourney Slug" onChange={handleSlug} />
+                    <br />
+                    <input type="text" placeholder="Enter Streamer Name" onChange={handleStream} />
+                </div>
+            )}
             <br />
-            <input
-                type="text"
-                placeholder="Enter Tourney Slug"
-                onChange={handleSlug}
-            />
-            <br />
-            <input
-                type="text"
-                placeholder="Enter Streamer Name"
-                onChange={handleStream}
-            />
-            <br />
-
             <button onClick={() => FetchQueue()}>Fetch From Stream Queue</button>
 
         </>)

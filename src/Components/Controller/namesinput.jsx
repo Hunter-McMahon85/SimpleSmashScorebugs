@@ -285,7 +285,7 @@ function Names() {
         placeholder="round"
         onChange={handleRound}
       />
-      
+
       <input
         type="text"
         value={PoolName}
@@ -323,6 +323,7 @@ function Names() {
         <img src={Char11_arr[1]} alt="character icon" onClick={() => Update_Icon(1, 11)} />
         <img src={Char11_arr[2]} alt="character icon" onClick={() => Update_Icon(2, 11)} />
         <img src={Char11_arr[3]} alt="character icon" onClick={() => Update_Icon(3, 11)} />
+        <br />
         <img src={Char11_arr[4]} alt="character icon" onClick={() => Update_Icon(4, 11)} />
         <img src={Char11_arr[5]} alt="character icon" onClick={() => Update_Icon(5, 11)} />
         <img src={Char11_arr[6]} alt="character icon" onClick={() => Update_Icon(6, 11)} />
@@ -353,6 +354,7 @@ function Names() {
         <img src={Char12_arr[1]} alt="character icon" onClick={() => Update_Icon(1, 12)} />
         <img src={Char12_arr[2]} alt="character icon" onClick={() => Update_Icon(2, 12)} />
         <img src={Char12_arr[3]} alt="character icon" onClick={() => Update_Icon(3, 12)} />
+        <br />
         <img src={Char12_arr[4]} alt="character icon" onClick={() => Update_Icon(4, 12)} />
         <img src={Char12_arr[5]} alt="character icon" onClick={() => Update_Icon(5, 12)} />
         <img src={Char12_arr[6]} alt="character icon" onClick={() => Update_Icon(6, 12)} />
@@ -385,6 +387,7 @@ function Names() {
         <img src={Char21_arr[1]} alt="character icon" onClick={() => Update_Icon(1, 21)} />
         <img src={Char21_arr[2]} alt="character icon" onClick={() => Update_Icon(2, 21)} />
         <img src={Char21_arr[3]} alt="character icon" onClick={() => Update_Icon(3, 21)} />
+        <br />
         <img src={Char21_arr[4]} alt="character icon" onClick={() => Update_Icon(4, 21)} />
         <img src={Char21_arr[5]} alt="character icon" onClick={() => Update_Icon(5, 21)} />
         <img src={Char21_arr[6]} alt="character icon" onClick={() => Update_Icon(6, 21)} />
@@ -392,21 +395,9 @@ function Names() {
       </div>
 
       <input type="text" value={P22} placeholder="tag22" onChange={handleP22} />
-      <input
-        type="text"
-        value={Pronoun22}
-        placeholder="Pronoun22"
-        onChange={handlePronoun22}
-      />
+      <input type="text" value={Pronoun22} placeholder="Pronoun22" onChange={handlePronoun22}/>
 
-      <Autocomplete
-        options={entered_name}
-        trigger=""
-        placeholder="p22char"
-        matchAny={true}
-        value={Char22_a}
-        onChange={(newValue) => handleP22a(newValue)}
-      />
+      <Autocomplete options={entered_name} trigger="" placeholder="p22char" matchAny={true} value={Char22_a} onChange={(newValue) => handleP22a(newValue)} />
 
       <button onClick={() => UI_icons(Char22_a, 22)}>Set P22 Icons</button>
 
@@ -415,41 +406,23 @@ function Names() {
         <img src={Char22_arr[1]} alt="character icon" onClick={() => Update_Icon(1, 22)} />
         <img src={Char22_arr[2]} alt="character icon" onClick={() => Update_Icon(2, 22)} />
         <img src={Char22_arr[3]} alt="character icon" onClick={() => Update_Icon(3, 22)} />
+        <br />
         <img src={Char22_arr[4]} alt="character icon" onClick={() => Update_Icon(4, 22)} />
         <img src={Char22_arr[5]} alt="character icon" onClick={() => Update_Icon(5, 22)} />
         <img src={Char22_arr[6]} alt="character icon" onClick={() => Update_Icon(6, 22)} />
         <img src={Char22_arr[7]} alt="character icon" onClick={() => Update_Icon(7, 22)} />
       </div>
 
-      <h3>Comentators</h3>
-      <input
-        type="text"
-        value={Commie1}
-        placeholder="commie1"
-        onChange={handlecommie1}
-      />
+      <h2>Comentators</h2>
+      <input type="text" value={Commie1} placeholder="commie1 Tag" onChange={handlecommie1} />
 
-      <input
-        type="text"
-        value={Commie1p}
-        placeholder="commie1 pronoun"
-        onChange={handlecommie1p}
-      />
+      <input type="text" value={Commie1p} placeholder="commie1 pronoun" onChange={handlecommie1p} />
+      <br />
 
-      <input
-        type="text"
-        value={Commie2}
-        placeholder="commie2"
-        onChange={handlecommie2}
-      />
+      <input type="text" value={Commie2} placeholder="commie2 Tag" onChange={handlecommie2} />
 
-      <input
-        type="text"
-        value={Commie2p}
-        placeholder="commie2 pronoun"
-        onChange={handlecommie2p}
-      />
-      <br></br>
+      <input type="text" value={Commie2p} placeholder="commie2 pronoun" onChange={handlecommie2p} />
+      <br />
       <button onClick={HandleEntry()}>Enter</button>
     </>
   );
