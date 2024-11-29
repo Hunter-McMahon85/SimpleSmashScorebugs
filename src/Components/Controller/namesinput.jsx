@@ -8,8 +8,6 @@ import oauthConfig from "./oauthConfig";
 
 function Names() {
   const endpoint = "https://api.start.gg/gql/alpha"
-  // hell but neccessary
-  const [Token, setToken] = useState(localStorage.getItem("access_token"));
   const [Streamer, setStreamer] = useState("");
   const [Slug, setSlug] = useState("");
 
@@ -235,11 +233,6 @@ function Names() {
     setPoolName(event.target.value);
   };
 
-  const GMode = (x) => {
-    localStorage.setItem("gm", x);
-    localStorage.setItem("ScoreboardType", "h");
-  };
-
   function HandleEntry() {
     if (P11 !== "") {
       localStorage.setItem("p11", P11);
@@ -407,18 +400,10 @@ function Names() {
 
   return (
     <>
-
-      <button onClick={() => GMode("D")}>Doubles</button>
-
-      <button onClick={() => GMode("S")}>Singles</button>
-      <br />
-      <button onClick={() => GMode("H")}>Hide</button>
-      <br />
-
       <h2>Start.gg Stream Queue</h2>
 
       <button onClick={login}>Login with Start.gg</button>
-      
+
       <br />
       <input
         type="text"
@@ -443,7 +428,7 @@ function Names() {
         placeholder="round"
         onChange={handleRound}
       />
-      
+
       <input
         type="text"
         value={PoolName}
