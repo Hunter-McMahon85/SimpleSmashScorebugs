@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import oauthConfig from '../Components/oauthConfig';
+import oauthConfig from '../Components/Controller/oauthConfig';
 
 const Callback = () => {
   const location = useLocation();
