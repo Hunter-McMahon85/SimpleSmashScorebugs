@@ -83,12 +83,13 @@ h4 {
 
 .DHduopronoun {
   width: 35%;
+  color: #75cb0b;
 }
 
 .DHduoscore {
   width: 15%;
   font-size: 50px;
-  color: #75cb0b;
+  color: #32b5fc;
   display: inherit;
   justify-content: center;
   align-items: center;
@@ -101,6 +102,9 @@ h4 {
 
 .DHduogamer h1 {
   font-size: large;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
 }
 
 .DHduogamer {

@@ -58,14 +58,14 @@ h4 {
 }
 
 .DHinfo {
-  width: 32%;
+  width: 30%;
   color: #32b5fc;
 }
 
 .DHgamer {
   display: flex;
   align-items: center;
-  width: 34%;
+  width: 35%;
 }
 
 .DHgamer img {
@@ -76,16 +76,8 @@ h4 {
 
 .DHpronoun {
   width: 30%;
-}
-
-.DHscore {
-  width: 10%;
-  font-size: 50px;
   color: #75cb0b;
-  display: inherit;
-  justify-content: center;
-  align-items: center;
-  font-family: pixelbold;
+  
 }
 
 .DHtag {
@@ -94,4 +86,13 @@ h4 {
 
 .DHgamer h1 {
   font-size: x-large;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
+}
+
+.DHscore {
+  width: 10%;
+  color: #32b5fc;
+  font-family: pixelbold;
 }

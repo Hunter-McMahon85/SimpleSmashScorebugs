@@ -143,11 +143,11 @@ function SQFetch() {
 
     return (
         <>
-            <h2>Start.gg Stream Queue</h2>
+            <h2>
+                Start.gg Stream Queue <button onClick={toggleSection}> {showFields ? 'Hide Fields' : 'Show Fields'}</button>
+            </h2>
 
-            <button onClick={toggleSection}>
-                {showFields ? 'Hide Fields' : 'Show Fields'}
-            </button>
+
             {showFields && (
                 <div>
                     <button onClick={login}>{LoginTXT}</button>

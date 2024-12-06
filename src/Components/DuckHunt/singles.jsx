@@ -49,8 +49,8 @@ const Singles = () => {
 
           <div className="DHgamer">
             <h1 className="DHscore">{P1Score}</h1>
-            <h1 className="DHtag">{P11}</h1>
             <h1 className="DHpronoun">{Pronoun11}</h1>
+            <h1 className="DHtag">{P11}</h1>
             <img src={Char11} alt="" />
           </div>
 

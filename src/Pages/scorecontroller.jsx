@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Names from "../Components/Controller/namesinput";
 import SQFetch from "../Components/Controller/StreamQueFetch";
+import StartMsg from "../Components/Controller/StartPopup";
 import "../css/control.css"
 
 function Controller() {
@@ -11,8 +12,15 @@ function Controller() {
   let p2score = 0;
   localStorage.setItem("p1score", p1score);
   localStorage.setItem("p2score", p2score);
-  
+
   const [HideMSG, setHideMSG] = useState("Scorebug is Visible");
+
+  const [isPopUpOpen, setPopUpOpen] = useState(false);
+
+  useEffect(() => {
+    // Open the modal when the component mounts
+    setPopUpOpen(true);
+  }, []);
 
 
   function score(p, x) {
@@ -65,7 +73,9 @@ function Controller() {
 
   return (
     <>
-      
+      {isPopUpOpen && (
+        <StartMsg onClose={() => setPopUpOpen(false)} />
+      )}
       <div className="UI_Contain">
         <Link to="/scorebugs">
           <button className="bugselect">

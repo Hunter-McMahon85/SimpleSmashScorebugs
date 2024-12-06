@@ -19,10 +19,11 @@
     text-align: center;
     width: 80%;
     height: auto;
+    overflow-wrap: break-word;
   }
   
   .sos ul {
-    text-align: left;
+    text-align: center;
     list-style-type: decimal;
   }
   

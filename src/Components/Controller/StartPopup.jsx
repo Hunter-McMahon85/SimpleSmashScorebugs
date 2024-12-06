@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../css/popup.css";
 
 function StartMsg({ onClose }) {
@@ -8,41 +9,54 @@ function StartMsg({ onClose }) {
                 <div className="sos">
                     <h2>Welcome to the Scorebug Controller</h2>
                     <h3>
-                        If this is your first time using, be sure to do the following to setup the scorebug:
+                        If you have set this up before, refresh the Browser Source in the stream scene sources
+                    </h3>
+                    <button onClick={onClose}>Start Scorekeeping</button>
+                    <br />
+                    <h3>
+                        If This is your first Time do the following:
                     </h3>
                     <ul>
                         <li>
-                            In the "sources" tab, Add a new Browser source by right clicking on the sources list then clicking "Add" then "Browser". 
-                            Alternatively click the "+" icon in the bottom left corner of the sources list and then on browser
+                            Add a Browser Source to your stream in the OBS sources window/tab.
                         </li>
                         <li>
-                            Click "Create New", Enter "Scorebug" into the text box and Click "ok"
+                            When prompted, Click "Create New", Enter "Scorebug" into the text box and Click "ok"
                         </li>
                         <li>
-                            in the URL field, enter the link "https://www.simplesmashscorebugs.com/#/scoreboard". <br />
-                            Since smash ultimate is capped to 1080p resolution, 
-                            make sure your stream output is set to 1080x1920 (Width x Height) 
-                            And also ensure the width and hieght fields for the scorebug are also set to 1080px and 1920px.
-                            Additonally, ensure that the custom CSS field is empty (OBS will automatically populate this
-                            with some styles). 
-                        </li>
-                        <li>
-                            If the scorebug is not sized correctly or in the wrong spot, go to the sources tab, right click on "scoreboard", then on
-                            "transform" and then on "fit to screen" to ensure it is size correctly. 
-                            At fist a scorebug may not appear, in this case, refresh the page or select one of the options out of singles or doubles on the control panel.
+                            in the URL field, enter the link:<br /><br /> https://www.simplesmashscorebugs.com/#/scoreboard<br /><br />
+                            Then, ensure the following before clicking ok:
+                            <ul>
+                                <li>Width is Set to 1920</li>
+                                <li>Height is Set to 1080</li>
+                                <li>The custom CSS field is empty</li>
+                            </ul>
                         </li>
                     </ul>
                     <p>
-                        If you have already added the overlay to your stream sources, Then
-                        refresh the browser source to update the overlay. To do this,
-                        left-click on "scoreboard" in sources. This will bring up a grey bar
-                        below the stream preview with a button to refresh the page. Clicking
-                        this button will refresh the page and display your scoreboard.
+                        The scorebug should now be added and will appear in the stream preview.
+                        <br /><br />
+                        If the scorebug is not sized correctly or in the wrong spot, do the following:
+                        <br /><br />
+                        In the sources Tab, right click on "scoreboard" then "transform" and then "fit to screen" to ensure it is size correctly.
+                        <br /><br />
                     </p>
-                    <br></br>
-                    <button onClick={onClose}>Start Smashing</button>
+                    <h3>
+                        Adding the commentator Scorebug:
+                    </h3>
+                    <p>
+                        If you would like to have a seprate scene for commentators, we have a scorebug for that. 
+                        <br /><br />
+                        To set this up do the same process as before in the commentator scene but use the following link as the browser source URL:
+                        <br /><br />
+                        https://www.simplesmashscorebugs.com/#/comms
+                        <br /><br />
+                        For more in depth instuctions on setup and how to use the scorbug, <Link to="/howtouse">please view the setup/support documentation </Link>
+                    </p>
+                    <br />
+                    <button onClick={onClose}>Start Scorekeeping</button>
                 </div>
-            </div>
+            </div >
         </>
     );
 }
