@@ -15,9 +15,11 @@ function SQFetch() {
         setshowFields(!showFields);
     };
 
-    if (Token != null) {
-        setLoginTXT("Refresh Start.GG Login");
-    }
+    useEffect(() => {
+        if (Token != null) {
+            setLoginTXT("Refresh Start.GG Login");
+        }
+    }, [Token]);
 
     const handleStream = (event) => {
         setStreamer(event.target.value);
