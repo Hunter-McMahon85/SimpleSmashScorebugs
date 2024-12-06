@@ -43,7 +43,7 @@ const Callback = () => {
     }
   };
 
-  return <p>Logging you in...</p>;
+  return (<><p>Logging you in...</p></>);
 };
 
 export default Callback;

@@ -33,7 +33,7 @@ const HowToUse = () => {
                 <div class="title">
                     <h1>SIMPLE SMASH SCOREBUGS</h1>
                 </div>
-                <h2 className="ttitle">How To Use</h2>
+                <h2 className="title">How To Use</h2>
 
                 <div className='content'>
                     <div className="instructions">
