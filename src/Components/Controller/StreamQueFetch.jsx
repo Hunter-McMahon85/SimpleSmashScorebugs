@@ -5,7 +5,7 @@ import oauthConfig from "./oauthConfig";
 
 function SQFetch() {
     const endpoint = "https://api.start.gg/gql/alpha"
-    const [Token, setToken] = useState(localStorage.getItem("access_token"));
+    let Token = localStorage.getItem("access_token");
     const [Streamer, setStreamer] = useState("");
     const [Slug, setSlug] = useState("");
     const [LoginTXT, setLoginTXT] = useState("Login with Start.gg");
