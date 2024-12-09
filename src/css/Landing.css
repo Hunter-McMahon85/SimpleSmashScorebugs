@@ -119,6 +119,7 @@ h2 {
   margin: 0%;
   padding: 1%;
 }
+
 .content {
   background-image: url("../../public/images/smashball.png");
   background-size: 2%;
@@ -136,7 +137,7 @@ h2 {
 }
 
 .InstructionContent {
-  margin: 0 5% 0 5%;
+  margin: 0% 20%;
   align-items: center;
   justify-items: center;
 }
@@ -151,6 +152,7 @@ h2 {
   align-items: center;
   padding: 20px;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .themebutton {
@@ -205,6 +207,15 @@ h2 {
 
 .initialcontain ol {
   text-align: left;
+  margin: 0% 20%;
+}
+
+.initialcontain ul {
+  text-align: left;
+  margin: 0% 20%;
+}
+.initialcontain {
+  padding-bottom: 5%;
 }
 
 @media (width >= 400px) {
@@ -267,7 +278,7 @@ footer ul {
 }
 
 footer li {
-  margin: 10px 0px 10px 0px;
+  margin: 20px 25px;
 }
 
 footer li a {
