@@ -15,7 +15,7 @@ const NavBar = () => {
                         </li>
                         <li>
                             <Link to="/howtouse">
-                                How to Use
+                                Tutorials
                             </Link>
                         </li>
                         <li>
