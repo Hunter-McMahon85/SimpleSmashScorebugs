@@ -24,6 +24,11 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
+                            <Link to="/MBconfig">
+                                MatchBoard
+                            </Link>
+                        </li>
+                        <li>
                             <Link to="/about">
                                 About
                             </Link>

@@ -1,70 +1,43 @@
 import React, { useState, useEffect } from "react";
-import oauthConfig from "./oauthConfig";
 
 
-
-function SQFetch() {
+function MatchBoard() {
     const endpoint = "https://api.start.gg/gql/alpha"
     let Token = localStorage.getItem("access_token");
-    const [Streamer, setStreamer] = useState("");
     const [Slug, setSlug] = useState("");
-    const [LoginTXT, setLoginTXT] = useState("Login with Start.gg");
-    const [showFields, setshowFields] = useState(true);
+    const [Pages, setPages] = useState(0);
+    const [Page, setPage] = useState(0);
+    const [X, setX] = useState(0);
 
-    const toggleSection = () => {
-        setshowFields(!showFields);
-    };
-
-    useEffect(() => {
-        if (Token != null) {
-            setLoginTXT("Refresh Start.GG Login");
-        }
-    }, [Token]);
-
-    const handleStream = (event) => {
-        setStreamer(event.target.value);
-        console.log(Streamer);
-    }
-
-    const handleSlug = (event) => {
-        setSlug(event.target.value);
-        console.log(Slug);
-    }
-
-    function FetchQueue() {
+    function FetchSets() {
         const query = {
             method: 'POST',
             headers: { "Content-Type": "application/json", "Authorization": "Bearer" + Token },
             body: JSON.stringify({
-                "query": `query StreamQueueOnTournament($tourneySlug: String!) {
-                tournament(slug: $tourneySlug) 
-                {
-                  streamQueue 
-                  {
-                    stream 
-                    {
-                      streamName
-                    }
-                    sets 
-                    {
-                      fullRoundText
-                      slots 
-                      {
-                        entrant 
-                        {
-                          participants {
-                            gamerTag
-                            user{
-                              genderPronoun
+                "query": `query EventSets($slug: String) {
+                        event(slug: $slug) {
+                            id
+                            name
+                            sets {
+                            pageInfo {
+                                total
                             }
-                          }
+                        nodes {
+                        id
+                        state
+                        startedAt
+                        slots {
+                            id
+                            entrant {
+                                id
+                                name
+                            }
                         }
-                      }
                     }
-                  }
                 }
-              }`,
-                "operationName": "StreamQueueOnTournament",
+            }
+        }`,
+                "operationName": "EventSets",
                 "variables": { "tourneySlug": Slug }
             })
         };
@@ -95,16 +68,8 @@ function SQFetch() {
                 }
             }
             if (is_valid === true) {
-                localStorage.setItem("p11", "");
-                localStorage.setItem("p12", "");
-                localStorage.setItem("p21", "");
-                localStorage.setItem("p22", "");
-                localStorage.setItem("Pronoun11", "");
-                localStorage.setItem("Pronoun12", "");
-                localStorage.setItem("Pronoun21", "");
-                localStorage.setItem("Pronoun22", "");
-                localStorage.setItem("round", "");
-
+                // logic will need to change. likely will do an array of dictionaries and only store called and uncalled matches, 
+                // insert called at the front and uncalled at the top of the stack
 
                 localStorage.setItem("round", desired_Q["sets"][0]["fullRoundText"]);
                 localStorage.setItem("p11", desired_Q["sets"][0]["slots"][0]["entrant"]["participants"][0]["gamerTag"]);
@@ -136,32 +101,36 @@ function SQFetch() {
         set_data();
     }
 
-    const login = () => {
-        localStorage.setItem('LoginContext', "SQ");
-        const authUrl = `https://start.gg/oauth/authorize?response_type=code&client_id=175&scope=user.identity%20user.email&redirect_uri=${encodeURIComponent(oauthConfig.redirect_uri)}`;
-        window.location.href = authUrl;
+
+    const reload = () => {
+        setPage(X+1)
+        if (Page > Pages)
+        {
+            FetchSets()
+            setPage(0)
+        } else {
+
+
+        }
     };
+
+    useEffect(() => {
+        reload();
+        const interval = setInterval(reload, 4000);
+        
+        // this is so if this page is used as a component the interval ends
+        // when the component is closed
+        return () => {
+            clearInterval(interval);
+        };
+    });
+
 
     return (
         <>
-            <h2>
-                Start.gg Stream Queue <button onClick={toggleSection}> {showFields ? 'Hide Fields' : 'Show Fields'}</button>
-            </h2>
 
-
-            {showFields && (
-                <div>
-                    <button onClick={login}>{LoginTXT}</button>
-                    <br />
-                    <input type="text" placeholder="Enter Tourney Slug" onChange={handleSlug} />
-                    <br />
-                    <input type="text" placeholder="Enter Streamer Name" onChange={handleStream} />
-                </div>
-            )}
-            <br />
-            <button onClick={() => FetchQueue()}>Fetch From Stream Queue</button>
-
-        </>)
+        </>
+    )
 }
 
-export default SQFetch;
+export default MatchBoard;

@@ -10,6 +10,8 @@ import Scoreboard from "./Pages/scoreboard";
 import Callback from "./Pages/callback";
 import PP from "./Pages/privacypolicy";
 import Terms from "./Pages/Terms";
+import BoardConfig from "./Components/MatchBoard/BoardConfig";
+import MatchBoard from "./Components/MatchBoard/Board";
 
 
 
@@ -26,6 +28,8 @@ function App() {
       <Route path="/TokenAuth" element={<Callback />} />
       <Route path="/PrivacyPolicy" element={<PP />} />
       <Route path="/TOS" element={<Terms />} />
+      <Route path="/MBconfig" element={<BoardConfig />} />
+      <Route path="/MatchBoard" element={<MatchBoard />} />
     </Routes>
   );
 }
