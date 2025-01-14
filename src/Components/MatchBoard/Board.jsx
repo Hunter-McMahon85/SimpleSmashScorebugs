@@ -3,11 +3,16 @@ import React, { useState, useEffect } from "react";
 
 function MatchBoard() {
     const endpoint = "https://api.start.gg/gql/alpha"
-    let Token = localStorage.getItem("access_token");
-    const [Slug, setSlug] = useState("");
-    const [Pages, setPages] = useState(0);
-    const [Page, setPage] = useState(0);
-    const [X, setX] = useState(0);
+    // let Token = localStorage.getItem("access_token");
+    // -----------------------------Temporaily static for development----------------------------------------
+    let Token = "no token 4 u";
+    let DState = 6;
+    let m = 3;
+    //------------------------------
+    const [Slug, setSlug] = useState(localStorage.getItem("MBslug"));
+    const [Active, setActive] = useState([]);
+    const [Idle, setIdle] = useState([]);
+    const [Board, setBoard] = useState("");
 
     function FetchSets() {
         const query = {
@@ -38,7 +43,7 @@ function MatchBoard() {
             }
         }`,
                 "operationName": "EventSets",
-                "variables": { "tourneySlug": Slug }
+                "variables": { "slug": Slug }
             })
         };
 
@@ -56,68 +61,66 @@ function MatchBoard() {
         async function set_data() {
             let data = await fetch_data();
             data = JSON.parse(data);
-            let Queues = data["tournament"]["streamQueue"];
+            //console.log(data)
+            let sets = data["event"]["sets"];
 
-            let is_valid = false;
-            let desired_Q = null;
-            for (let i = 0; i < Queues.length; i++) {
-                if (Streamer === Queues[i]["stream"]["streamName"]) {
-                    is_valid = true;
-                    desired_Q = Queues[i];
+            // two stacks, one for active and one for inactive. each time a match is removed from the active queue we preform a check to see if the matches status is still the same
+            let AQ = Active;
+            let IQ = Idle;
+            let n = sets["nodes"].length;
+
+            // ensure the idle queue is up to date with new matches
+            for (let i = 0; i < n; i++) {
+                const node = sets["nodes"][i];
+                const isActive = AQ.some(item => item.id === node.id);
+                const isIdle = IQ.some(item => item.id === node.id);
+
+                if (isActive || isIdle) {
+                    continue;
+                } else if (sets["nodes"][i]["state"] === DState) {
+                    IQ.push(node);
+                }
+            }
+
+            // Replace the active queue and remove matches whose state no longer match the desired state dstate
+            for (let i = 0; i < m; i++) {
+                let x = AQ.length;
+                let y = IQ.length;
+
+                if (y == 0) {
+                    // no more matches to add to the board
                     break;
                 }
+
+                if (x == m) {
+                        AQ.push(IQ.shift())
+                        IQ.push(AQ.shift())
+                        continue;
+                }
+                
+                AQ.push(IQ.shift())
             }
-            if (is_valid === true) {
-                // logic will need to change. likely will do an array of dictionaries and only store called and uncalled matches, 
-                // insert called at the front and uncalled at the top of the stack
+            console.log("----------------------------------------------------------")
+            setActive(AQ)
+            setIdle(IQ)
 
-                localStorage.setItem("round", desired_Q["sets"][0]["fullRoundText"]);
-                localStorage.setItem("p11", desired_Q["sets"][0]["slots"][0]["entrant"]["participants"][0]["gamerTag"]);
-                if (desired_Q["sets"][0]["slots"][0]["entrant"]["participants"][0]["user"]) {
-                    localStorage.setItem("Pronoun11", desired_Q["sets"][0]["slots"][0]["entrant"]["participants"][0]["user"]["genderPronoun"]);
-                }
+            console.log(Active)
+            console.log(Idle)
 
-                localStorage.setItem("p21", desired_Q["sets"][0]["slots"][1]["entrant"]["participants"][0]["gamerTag"]);
-                if (desired_Q["sets"][0]["slots"][1]["entrant"]["participants"][0]["user"]) {
-                    localStorage.setItem("Pronoun21", desired_Q["sets"][0]["slots"][1]["entrant"]["participants"][0]["user"]["genderPronoun"]);
-                }
+            setBoard(<><p>{Active[0]["id"].toString()} <br/><br/> {Active[1]["id"].toString()}  <br/><br/>{Active[2]["id"].toString()}</p></>)
 
-                if (desired_Q["sets"][0]["slots"][0]["entrant"]["participants"][1]) {
-                    localStorage.setItem("p12", desired_Q["sets"][0]["slots"][0]["entrant"]["participants"][1]["gamerTag"]);
-                    if (desired_Q["sets"][0]["slots"][0]["entrant"]["participants"][1]["user"]) {
-                        localStorage.setItem("Pronoun12", desired_Q["sets"][0]["slots"][0]["entrant"]["participants"][1]["user"]["genderPronoun"]);
-                    }
-                }
-
-                if (desired_Q["sets"][0]["slots"][1]["entrant"]["participants"][1]) {
-                    localStorage.setItem("p22", desired_Q["sets"][0]["slots"][1]["entrant"]["participants"][1]["gamerTag"]);
-                    if (desired_Q["sets"][0]["slots"][1]["entrant"]["participants"][1]["user"]) {
-                        localStorage.setItem("Pronoun22", desired_Q["sets"][0]["slots"][1]["entrant"]["participants"][1]["user"]["genderPronoun"]);
-                    }
-                }
-            }
         }
 
         set_data();
     }
 
-
-    const reload = () => {
-        setPage(X+1)
-        if (Page > Pages)
-        {
-            FetchSets()
-            setPage(0)
-        } else {
-
-
-        }
-    };
-
     useEffect(() => {
-        reload();
-        const interval = setInterval(reload, 4000);
-        
+        // just let it run, code will spaz out is fetch sets is called elsewhere
+        // and will be rate limited
+        const interval = setInterval(() => {
+            FetchSets();
+        }, 5000);
+
         // this is so if this page is used as a component the interval ends
         // when the component is closed
         return () => {
@@ -128,7 +131,18 @@ function MatchBoard() {
 
     return (
         <>
-
+            <div>
+                <div>
+                    <h1>CALLED MATCHES</h1>
+                </div>
+                <div>
+                    <table></table>
+                    {Board}
+                </div>
+                <div>
+                    <p>Utility Provided By SimpleSmashScorebugs.com</p>
+                </div>
+            </div>
         </>
     )
 }
