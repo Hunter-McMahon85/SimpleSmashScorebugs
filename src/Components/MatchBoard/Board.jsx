@@ -1,47 +1,58 @@
 import React, { useState, useEffect } from "react";
-
+import '../../css/matchboard.css'
 
 function MatchBoard() {
     const endpoint = "https://api.start.gg/gql/alpha"
-    // let Token = localStorage.getItem("access_token");
+    let Token = localStorage.getItem("access_token");
     // -----------------------------Temporaily static for development----------------------------------------
-    let Token = "no token 4 u";
-    let DState = 6;
-    let m = 3;
+    
+    // this is the number of rows in the table, eventually determined by window size but static for initial beta release
+    let m = 10;
     //------------------------------
-    const [Slug, setSlug] = useState(localStorage.getItem("MBslug"));
     const [Active, setActive] = useState([]);
     const [Idle, setIdle] = useState([]);
-    const [Board, setBoard] = useState("");
+    const [Board, setBoard] = useState(<tr></tr>);
 
     function FetchSets() {
         const query = {
             method: 'POST',
             headers: { "Content-Type": "application/json", "Authorization": "Bearer" + Token },
             body: JSON.stringify({
-                "query": `query EventSets($slug: String) {
-                        event(slug: $slug) {
+                "query": `query EventSets($slug: String) 
+                {
+                        event(slug: $slug) 
+                        {
                             id
                             name
-                            sets {
-                            pageInfo {
-                                total
-                            }
-                        nodes {
-                        id
-                        state
-                        startedAt
-                        slots {
-                            id
-                            entrant {
+                            sets 
+                            {
+                            pageInfo {total}
+                            nodes 
+                            {
                                 id
-                                name
+                                state
+                                startedAt
+                                fullRoundText
+                                phaseGroup
+                                {   
+                                    phase 
+                                    {
+                                        name
+                                    }
+                                }
+                                slots
+                                {
+                                    id
+                                    entrant 
+                                    {
+                                        id
+                                        name
+                                    }
+                                }
                             }
                         }
                     }
-                }
-            }
-        }`,
+                }`,
                 "operationName": "EventSets",
                 "variables": { "slug": Slug }
             })
@@ -64,7 +75,8 @@ function MatchBoard() {
             //console.log(data)
             let sets = data["event"]["sets"];
 
-            // two stacks, one for active and one for inactive. each time a match is removed from the active queue we preform a check to see if the matches status is still the same
+            // two queus, one for active and one for inactive. each time a match is removed from the active queue we preform a check to see if the matches status is still the same
+            // this can likely be done with an sliding pointer for better space efficency 
             let AQ = Active;
             let IQ = Idle;
             let n = sets["nodes"].length;
@@ -82,6 +94,7 @@ function MatchBoard() {
                 }
             }
 
+            setBoard("")
             // Replace the active queue and remove matches whose state no longer match the desired state dstate
             for (let i = 0; i < m; i++) {
                 let x = AQ.length;
@@ -93,22 +106,40 @@ function MatchBoard() {
                 }
 
                 if (x == m) {
-                        AQ.push(IQ.shift())
-                        IQ.push(AQ.shift())
-                        continue;
+                    AQ.push(IQ.shift())
+                    IQ.push(AQ.shift())
+
+                    continue;
                 }
-                
+
                 AQ.push(IQ.shift())
             }
-            console.log("----------------------------------------------------------")
-            setActive(AQ)
-            setIdle(IQ)
+            //console.log("----------------------------------------------------------")
+            setActive(AQ);
+            setIdle(IQ);
 
-            console.log(Active)
-            console.log(Idle)
+            //console.log(Active);
+            //console.log(Idle);
 
-            setBoard(<><p>{Active[0]["id"].toString()} <br/><br/> {Active[1]["id"].toString()}  <br/><br/>{Active[2]["id"].toString()}</p></>)
+            let rows = Active.map((item, i) => (
+                <tr key={i}>
+                    <td className="stime">
+                        {new Intl.DateTimeFormat('en-US', {
+                            hour: '2-digit',
+                            minute: '2-digit',
+                            second: '2-digit',
+                            hour12: true,
+                        }).format(new Date(item.startedAt*1000))}<br/>(+{Math.floor((Date.now() / 1000 - item.startedAt) / 60)} Minutes)
+                    </td>
+                    <td className="matchup">
+                        <b>{item.slots[0]?.entrant?.name}</b> vs <b>{item.slots[1]?.entrant?.name}</b>
+                    </td>
+                    <td className="roundtxt">{item.fullRoundText}</td>
+                    <td className="pooltxt">{item.phaseGroup?.phase?.name}</td>
+                </tr>
+            ));
 
+            setBoard(rows);
         }
 
         set_data();
@@ -131,15 +162,25 @@ function MatchBoard() {
 
     return (
         <>
-            <div>
-                <div>
+            <div className="MBcontain">
+                <div className="MBhead">
                     <h1>CALLED MATCHES</h1>
                 </div>
-                <div>
-                    <table></table>
-                    {Board}
+                <div className="MBBoard">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Call Time</th>
+                                <th>Matchup</th>
+                                <th>Round</th>
+                                <th>Pool</th>
+                            </tr>
+                        </thead>
+                        <tbody>{Board}</tbody>
+                        <tfoot></tfoot>
+                    </table>
                 </div>
-                <div>
+                <div className="MBfoot">
                     <p>Utility Provided By SimpleSmashScorebugs.com</p>
                 </div>
             </div>

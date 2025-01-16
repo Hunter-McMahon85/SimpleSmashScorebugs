@@ -1,0 +1,92 @@
+.MBcontain {
+  align-items: center;
+  justify-self: center;
+  text-align: center;
+  max-width: 100vw;
+  max-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.MBhead {
+  background-color: rgb(187, 187, 48);
+  color: black;
+  margin: 0;
+  width: 100%;
+  height: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+}
+
+.MBfoot {
+  background-color: black;
+  color: white;
+  background-color: black;
+  color: white;
+  margin: 0;
+  width: 100%;
+  height: 2%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: x-small;
+}
+
+.MBBoard {
+  width: 100%;
+  height: 90%;
+}
+
+.MBBoard table {
+  width: 100%;
+  height: 100%;
+}
+
+.MBBoard th {
+  background-color: black;
+  color: white;
+  font-size: x-large;
+  height: 5%;
+}
+
+.MBBoard thead {
+  background-color: black;
+  color: white;
+  height: 6%;
+}
+
+.MBBoard td {
+  height: 5%;
+}
+
+.MBBoard tr {
+  height: 5%;
+  font-size: xx-large;
+}
+
+.MBBoard tr:nth-child(even) {
+  background-color: #a0a0a0;
+}
+
+.stime {
+  width: 13%;
+}
+.matchup {
+  width: 55%;
+}
+.roundtxt {
+  width: 22%;
+}
+.pooltxt {
+  width: 10%;
+}
