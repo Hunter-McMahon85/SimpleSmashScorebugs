@@ -3,6 +3,7 @@ import '../../css/matchboard.css'
 
 function MatchBoard() {
     const endpoint = "https://api.start.gg/gql/alpha"
+    let Slug = localStorage.getItem("MBslug")
     let Token = localStorage.getItem("access_token");
     // -----------------------------Temporaily static for development----------------------------------------
     
