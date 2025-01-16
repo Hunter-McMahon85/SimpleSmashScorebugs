@@ -4,9 +4,10 @@ import '../../css/matchboard.css'
 function MatchBoard() {
     const endpoint = "https://api.start.gg/gql/alpha"
     let Slug = localStorage.getItem("MBslug")
-    let Token = localStorage.getItem("access_token");
+   //let Token = localStorage.getItem("access_token");
     // -----------------------------Temporaily static for development----------------------------------------
     
+    let DState = 6;
     // this is the number of rows in the table, eventually determined by window size but static for initial beta release
     let m = 10;
     //------------------------------

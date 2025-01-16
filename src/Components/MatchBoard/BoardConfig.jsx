@@ -40,10 +40,8 @@ function BoardConfig() {
                         <div className='InstructionContent'>
 
                             <div>
+                                <button onClick={login}>{LoginTXT}</button>
                                 <form>
-                                    <label>
-                                        <button onClick={login}>{LoginTXT}</button>
-                                    </label>
                                     <br /><br />
                                     <label>Enter Event Slug:
                                         <input
