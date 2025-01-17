@@ -9,7 +9,7 @@ function MatchBoard() {
     
     let DState = 6;
     // this is the number of rows in the table, eventually determined by window size but static for initial beta release
-    let m = 10;
+    let m = 3;
     //------------------------------
     const [Active, setActive] = useState([]);
     const [Idle, setIdle] = useState([]);
@@ -120,7 +120,7 @@ function MatchBoard() {
             setActive(AQ);
             setIdle(IQ);
 
-            //console.log(Active);
+            console.log(Active);
             //console.log(Idle);
 
             let rows = Active.map((item, i) => (
