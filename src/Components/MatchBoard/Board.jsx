@@ -4,59 +4,71 @@ import '../../css/matchboard.css'
 function MatchBoard() {
     const endpoint = "https://api.start.gg/gql/alpha"
     let Slug = localStorage.getItem("MBslug")
+    //let DState = localStorage.getItem("display");
+
+    let DState = 6;
     let Token = localStorage.getItem("access_token");
     // -----------------------------Temporaily static for development----------------------------------------
     
-    let DState = 6;
+
     // this is the number of rows in the table, eventually determined by window size but static for initial beta release
-    let m = 3;
+    let m = 10;
     //------------------------------
     const [Active, setActive] = useState([]);
     const [Idle, setIdle] = useState([]);
     const [Board, setBoard] = useState(<tr></tr>);
+
+    useEffect(() => {
+        switch (DState) {
+            case 1:
+                // uncalled match
+                break;
+            case 2:
+                // match in progress
+                break;
+            case 3:
+                // completed match
+                break;
+            case 6:
+                // match has been called
+                break;
+            default:
+                break;
+
+        }
+    }, [DState]);
 
     function FetchSets() {
         const query = {
             method: 'POST',
             headers: { "Content-Type": "application/json", "Authorization": "Bearer" + Token },
             body: JSON.stringify({
-                "query": `query EventSets($slug: String) 
+                "query": `query EventSets($slug: String, $DesiredState: [Int]) 
                 {
-                        event(slug: $slug) 
-                        {
+                    event(slug: $slug) {
+                    id
+                    name
+                    sets (perPage: 249, filters: {state: $DesiredState}){
+                        pageInfo {
+                            total
+                            totalPages
+                            page
+                        }
+                        nodes {
                             id
-                            name
-                            sets 
-                            {
-                            pageInfo {total}
-                            nodes 
-                            {
-                                id
-                                state
-                                startedAt
-                                fullRoundText
-                                phaseGroup
-                                {   
-                                    phase 
-                                    {
-                                        name
-                                    }
-                                }
-                                slots
-                                {
-                                    id
-                                    entrant 
-                                    {
-                                        id
-                                        name
-                                    }
+                            state
+                            startedAt
+                            slots {
+                                entrant {
+                                    name
                                 }
                             }
                         }
                     }
-                }`,
+                }
+            }`,
                 "operationName": "EventSets",
-                "variables": { "slug": Slug }
+                "variables": { "slug": Slug, "DesiredState": DState }
             })
         };
 
@@ -79,49 +91,44 @@ function MatchBoard() {
 
             // two queus, one for active and one for inactive. each time a match is removed from the active queue we preform a check to see if the matches status is still the same
             // this can likely be done with an sliding pointer for better space efficency 
-            let AQ = Active;
+            let AQ = []
             let IQ = Idle;
             let n = sets["nodes"].length;
 
             // ensure the idle queue is up to date with new matches
             for (let i = 0; i < n; i++) {
                 const node = sets["nodes"][i];
-                const isActive = AQ.some(item => item.id === node.id);
-                const isIdle = IQ.some(item => item.id === node.id);
-
-                if (isActive || isIdle) {
-                    continue;
-                } else if (sets["nodes"][i]["state"] === DState) {
+                // we only want to hold onto nodes that arent in the queue
+                if (!IQ.some(item => item.id === node.id))
+                {
                     IQ.push(node);
                 }
             }
 
             setBoard("")
-            // Replace the active queue and remove matches whose state no longer match the desired state dstate
-            for (let i = 0; i < m; i++) {
-                let x = AQ.length;
-                let y = IQ.length;
-
-                if (y == 0) {
-                    // no more matches to add to the board
+            
+            // set the active queue: double checks if match is queued match is still active
+            let i = 0;
+            while (i < m)
+            {
+                let toADD = IQ.shift();
+                if (toADD == undefined)
+                {
                     break;
                 }
-
-                if (x == m) {
-                    AQ.push(IQ.shift())
-                    IQ.push(AQ.shift())
-
-                    continue;
+                // only want to add still active items to the queue
+                if (sets["nodes"].some(item => item.id === toADD.id)) {
+                    AQ.push(toADD); 
+                    i++;
                 }
-
-                AQ.push(IQ.shift())
             }
-            //console.log("----------------------------------------------------------")
+
             setActive(AQ);
             setIdle(IQ);
 
-            console.log(Active);
-            //console.log(Idle);
+            //console.log(Active);
+            // console.log(Idle);
+            //console.log("----------------------------------------------------------")
 
             let rows = Active.map((item, i) => (
                 <tr key={i}>
@@ -131,7 +138,7 @@ function MatchBoard() {
                             minute: '2-digit',
                             second: '2-digit',
                             hour12: true,
-                        }).format(new Date(item.startedAt*1000))}<br/>(+{Math.floor((Date.now() / 1000 - item.startedAt) / 60)} Minutes)
+                        }).format(new Date(item.startedAt * 1000))}<br />(+{Math.floor((Date.now() / 1000 - item.startedAt) / 60)} Minutes)
                     </td>
                     <td className="matchup">
                         <b>{item.slots[0]?.entrant?.name}</b> vs <b>{item.slots[1]?.entrant?.name}</b>
