@@ -2,31 +2,32 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import NavBar from "../Components/navbar";
 import Foot from '../Components/footer';
+import BoardConfig from '../Components/MatchBoard/BoardConfig';
+import ScorebugSelect from '../Components/pages/Landing/scorebugs';
 import '../css/Landing.css'
 
 const Landing = () => {
     return (
         <>
             <div className="landcontain">
-                <NavBar></NavBar>
                 <div className="title">
-                    <h1>SIMPLE SMASH SCOREBUGS</h1>
+                    <h1>Welcome to Simple Smash Scorebugs</h1>
                 </div>
-                <h2>Info</h2>
+                <NavBar></NavBar>
                 <div className='content'>
                     <div className="instructions">
                         <div className='InstructionContent'>
                             <p>
                                 Simple Smash Scorebugs provides a simple, download free, overlay solution for your Super Smash Bros ultimate Streams.
                                 <br /><br />
-                                Using ths custom browser docks feature of OBS, we are able to provide a web based solution for your scorebug needs.
-                                Additonally, our scorebugs allow you to use the start.gg API to automatically fetch match data. This helps reduce downtime
-                                between matches on your stream allowing for a smoother event and viewer experience
-                                <br /><br />
-                                we dont just offer just a scorebug however. We also offer a match board for your events. Think of it like an airport departure board except it displays your events called matches.
+                                To get Started, check out one of our turotial pages or click on one of the utilities below
                             </p>
-                            <p>Learn how to get started by <Link to="/howtouse">clicking here</Link></p>
-                            <p>To view our scorebug templates, <Link to="/scorebugs">click here</Link></p>
+                            <h3>Scorebug App</h3>
+                            <ScorebugSelect></ScorebugSelect>
+                            <h3>Matchboard App</h3>
+                            <p>want to help players know when and who they play at your event? The matchboard app is essentially a transit departures/arrivals board but for called or on going matches</p>
+                            <BoardConfig></BoardConfig>
+
                         </div>
                     </div>
                 </div>

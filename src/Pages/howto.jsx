@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import NavBar from "../Components/navbar";
 import '../css/Landing.css'
-import Initial from "../Components/Tutorials/initial";
-import SggAPI from "../Components/Tutorials/sggAPI";
-import OBSchange from "../Components/Tutorials/obschange";
+import Initial from "../Components/pages/Tutorials/initial";
+import SggAPI from "../Components/pages/Tutorials/sggAPI";
+import OBSchange from "../Components/pages/Tutorials/obschange"
 import Foot from "../Components/footer";
 
 const HowToUse = () => {
@@ -29,11 +29,10 @@ const HowToUse = () => {
     return (
         <>
             <div class="landcontain">
-                <NavBar></NavBar>
                 <div class="title">
-                    <h1>SIMPLE SMASH SCOREBUGS</h1>
+                    <h1>Simple Smash Scorebugs Tutorials</h1>
                 </div>
-                <h2>How To Use</h2>
+                <NavBar></NavBar>
 
                 <div className='content'>
                     <div className="instructions">

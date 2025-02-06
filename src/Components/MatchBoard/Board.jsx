@@ -7,9 +7,9 @@ function MatchBoard() {
     //let DState = localStorage.getItem("display");
 
     let DState = 6;
-    let Token = localStorage.getItem("access_token");
+    //let Token = localStorage.getItem("access_token");
     // -----------------------------Temporaily static for development----------------------------------------
-    
+    let Token = "36713fb7d5835679bbdc36550fdbb37c";
 
     // this is the number of rows in the table, eventually determined by window size but static for initial beta release
     let m = 10;

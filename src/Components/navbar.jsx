@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import '../css/Landing.css'
+
 
 const NavBar = () => {
     return (
@@ -14,18 +14,8 @@ const NavBar = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link to="/howtouse">
+                            <Link to="/tutorials">
                                 Tutorials
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/scorebugs">
-                                Scorebugs
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/MBconfig">
-                                MatchBoard
                             </Link>
                         </li>
                         <li>

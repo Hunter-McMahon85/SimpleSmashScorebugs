@@ -9,11 +9,10 @@ const About = () => {
     return (
         <>
             <div class="landcontain">
-                <NavBar></NavBar>
                 <div class="title">
-                    <h1>SIMPLE SMASH SCOREBUGS</h1>
+                    <h1>About Simple Smash Scorebugs</h1>
                 </div>
-                <h2>About</h2>
+                <NavBar></NavBar>
 
                 <div className="content">
                     <div className="instructions">

@@ -7,11 +7,10 @@ const Terms = () => {
     return (
         <>
             <div className="landcontain">
-                <NavBar></NavBar>
                 <div className="title">
-                    <h1>SIMPLE SMASH SCOREBUGS</h1>
+                    <h1>Terms of Service</h1>
                 </div>
-                <h2>Terms of Service</h2>
+                <NavBar></NavBar>
                 <div className='content'>
                     <div className="instructions">
                         <div className='InstructionContent'>

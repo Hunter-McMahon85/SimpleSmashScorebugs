@@ -7,11 +7,10 @@ const PP = () => {
     return (
         <>
             <div className="landcontain">
-                <NavBar></NavBar>
                 <div className="title">
-                    <h1>SIMPLE SMASH SCOREBUGS</h1>
+                    <h1>Privacy Policy</h1>
                 </div>
-                <h2>Privacy Policy</h2>
+                <NavBar></NavBar>
                 <div className='content'>
                     <div className="instructions">
                         <div className='InstructionContent'>

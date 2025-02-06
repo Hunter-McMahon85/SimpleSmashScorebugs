@@ -5,12 +5,10 @@ import Landing from "./Pages/landing";
 import Comms from "./Components/NTZ/comms";
 import About from "./Pages/about";
 import HowToUse from "./Pages/howto";
-import ScorebugSelect from "./Pages/scorebugs";
 import Scoreboard from "./Pages/scoreboard";
 import Callback from "./Pages/callback";
 import PP from "./Pages/privacypolicy";
 import Terms from "./Pages/Terms";
-import BoardConfig from "./Components/MatchBoard/BoardConfig";
 import MatchBoard from "./Components/MatchBoard/Board";
 
 
@@ -20,15 +18,13 @@ function App() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/scoreboard" element={<Scoreboard />} />
-      <Route path="/howtouse" element={<HowToUse />} />
-      <Route path="/scorebugs" element={<ScorebugSelect />} />
+      <Route path="/tutorials" element={<HowToUse />} />
       <Route path="/about" element={<About />} />
       <Route path="/controller" element={<Controller />} />
       <Route path="/comms" element={<Comms />} />
       <Route path="/TokenAuth" element={<Callback />} />
       <Route path="/PrivacyPolicy" element={<PP />} />
       <Route path="/TOS" element={<Terms />} />
-      <Route path="/MBconfig" element={<BoardConfig />} />
       <Route path="/MatchBoard" element={<MatchBoard />} />
     </Routes>
   );

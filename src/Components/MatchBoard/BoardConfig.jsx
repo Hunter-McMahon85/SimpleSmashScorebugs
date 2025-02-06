@@ -17,6 +17,16 @@ function BoardConfig() {
     }, [Token]);
 
     const submit = () => {
+        /*
+        const url = "https://www.start.gg/tournament/api-testing-3/event/dev-testing/brackets/1534774/2307767";
+        const match = url.match(/tournament\/.*?\/event\/.*?(?=\/|$)/);
+
+        if (match) {
+            console.log(match[0]); // Output: "tournament/api-testing-3/event/dev-testing"
+        } else {
+            console.log("No match found.");
+        }
+        */
         console.log(Slug)
         localStorage.setItem('MBslug', Slug);
     }
@@ -29,43 +39,26 @@ function BoardConfig() {
 
     return (
         <>
-            <div className="landcontain">
-                <NavBar></NavBar>
-                <div className="title">
-                    <h1>SIMPLE SMASH SCOREBUGS</h1>
-                </div>
-                <h2>Info</h2>
-                <div className='content'>
-                    <div className="instructions">
-                        <div className='InstructionContent'>
 
-                            <div>
-                                <button onClick={login}>{LoginTXT}</button>
-                                <form>
-                                    <br /><br />
-                                    <label>Enter Event Slug:
-                                        <input
-                                            type="text"
-                                            value={Slug}
-                                            onChange={(e) => setSlug(e.target.value)}
-                                        />
-                                    </label>
-                                    <label>
-                                        <Link to="/MatchBoard">
-                                            <button onClick={() => { submit(); }}>
-                                                Submit
-                                            </button>
-                                        </Link>
-                                    </label>
-                                </form>
-                            </div>
-
-                            <br />
-
-                        </div>
-                    </div>
-                </div>
-                <Foot></Foot>
+            <div>
+                <button onClick={login}>{LoginTXT}</button>
+                <form>
+                    <br /><br />
+                    <label>Enter Event Slug:
+                        <input
+                            type="text"
+                            value={Slug}
+                            onChange={(e) => setSlug(e.target.value)}
+                        />
+                    </label>
+                    <label>
+                        <Link to="/MatchBoard">
+                            <button onClick={() => { submit(); }}>
+                                Submit
+                            </button>
+                        </Link>
+                    </label>
+                </form>
             </div>
         </>
     )
