@@ -77,7 +77,7 @@ function Controller() {
         <StartMsg onClose={() => setPopUpOpen(false)} />
       )}
       <div className="UI_Contain">
-        <Link to="/scorebugs">
+        <Link to="/">
           <button className="bugselect">
             Change Theme
           </button>
