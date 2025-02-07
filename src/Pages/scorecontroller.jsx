@@ -82,14 +82,6 @@ function Controller() {
             Change Theme
           </button>
         </Link>
-        <div className="scoring">
-          <h2>Scoring</h2>
-          <button onClick={() => score(1, 1)}>Win Player/Duo 1</button>
-
-          <button onClick={() => score(2, 1)}>Win Player/Duo 2</button>
-
-          <button onClick={() => reset_scores()}>Reset Score</button>
-        </div>
         <p>*player/duo 1 will always be the leftmost or topmost tag on the scorebug</p>
         <h2>Scorebug Visuals</h2>
         <button onClick={() => Show_MU()}>Show Match Intro</button>
@@ -99,13 +91,17 @@ function Controller() {
         <br />
         <p>{HideMSG}</p>
         <button onClick={() => GMode("H")}>Hide Scorebug</button>
-        <br />
-        <br />
+
         <SQFetch />
-        <br />
-        <br />
+      </div>
+      <div className="scoring">
+        <h2>Scoring</h2>
+        <button onClick={() => score(1, 1)}>Win Player/Duo 1</button>
+        <button onClick={() => reset_scores()}>Reset Score</button>
+        <button onClick={() => score(2, 1)}>Win Player/Duo 2</button>
+      </div>
+      <div>
         <Names />
-        <br />
       </div>
     </>
   );
