@@ -22,6 +22,12 @@ function Controller() {
     setPopUpOpen(true);
   }, []);
 
+  const [showOps, setshowOps] = useState(true);
+
+  const toggleOps = () => {
+    setshowOps(!showOps);
+  };
+
 
   function score(p, x) {
     if (p === 1) {
@@ -77,30 +83,32 @@ function Controller() {
         <StartMsg onClose={() => setPopUpOpen(false)} />
       )}
       <div className="UI_Contain">
-        <Link to="/">
-          <button className="bugselect">
-            Change Theme
-          </button>
-        </Link>
         <p>*player/duo 1 will always be the leftmost or topmost tag on the scorebug</p>
-        <h2>Scorebug Visuals</h2>
-        <button onClick={() => Show_MU()}>Show Match Intro</button>
-        <br />
-        <button onClick={() => GMode("D")}>Doubles</button>
-        <button onClick={() => GMode("S")}>Singles</button>
-        <br />
-        <p>{HideMSG}</p>
-        <button onClick={() => GMode("H")}>Hide Scorebug</button>
+        <h2>Scorebug Visual Options <br /><button onClick={toggleOps}> {showOps ? 'Hide Options' : 'Show Options'}</button></h2>
+        {showOps && (
+          <>
+            <Link to="/">
+              <button className="bugselect">
+                Change Scorebug Theme
+              </button>
+            </Link>
+            <br />
+            <button onClick={() => Show_MU()}>Show Match Intro</button>
+            <button onClick={() => GMode("D")}>Doubles</button>
+            <button onClick={() => GMode("S")}>Singles</button>
+            <br />
+            <p>{HideMSG}</p>
+            <button onClick={() => GMode("H")}>Hide Scorebug</button>
+          </>
+        )}
 
         <SQFetch />
-      </div>
-      <div className="scoring">
         <h2>Scoring</h2>
-        <button onClick={() => score(1, 1)}>Win Player/Duo 1</button>
-        <button onClick={() => reset_scores()}>Reset Score</button>
-        <button onClick={() => score(2, 1)}>Win Player/Duo 2</button>
-      </div>
-      <div>
+        <div className="scoring">
+          <button onClick={() => score(1, 1)}>Win Player/Duo 1</button>
+          <button onClick={() => reset_scores()}>Reset Score</button>
+          <button onClick={() => score(2, 1)}>Win Player/Duo 2</button>
+        </div>
         <Names />
       </div>
     </>

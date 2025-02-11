@@ -63,7 +63,6 @@ const ScoreboardDuo = () => {
         <div className="DHduooverlay">
 
           <div className="dhDuo">
-            <h1 className="DHduoscore">{S1}</h1>
             <div className="dhduoplayers">
               <div className="DHduogamer">
                 <h1 className="DHduopronoun">{Pro11}</h1>
@@ -76,6 +75,7 @@ const ScoreboardDuo = () => {
                 <img src={C12} alt="" />
               </div>
             </div>
+            <h1 className="DHduoscore">{S1}</h1>
           </div>
 
           <div className="DHDuoinfo">
@@ -84,6 +84,7 @@ const ScoreboardDuo = () => {
           </div>
 
           <div className="dhDuo">
+            <h1 className="DHduoscore">{S2}</h1>
             <div className="dhduoplayers">
               <div className="DHduogamer">
                 <img src={C21} alt="" />
@@ -97,7 +98,6 @@ const ScoreboardDuo = () => {
                 <h1 className="DHduopronoun">{Pro22}</h1>
               </div>
             </div>
-            <h1 className="DHduoscore">{S2}</h1>
           </div>
 
         </div>

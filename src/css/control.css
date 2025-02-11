@@ -4,12 +4,16 @@
 }
 
 .UI_Contain h2 {
-  margin: 5px 10px 5px 10px;
   font-family: "Franklin Gothic Medium";
+  width: 100%;
+  text-align: center;
 }
 
 .UI_Contain {
-  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .UI_Contain button {
@@ -64,7 +68,7 @@
   font-family: "Franklin Gothic Medium";
 }
 
-.modcontain h3, p{
+.modtxt {
   color: #41d941;
 }
 
@@ -85,6 +89,7 @@
   height: auto;
   overflow-wrap: break-word;
   margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 .mod button {
@@ -103,4 +108,15 @@
     background-color: white;
     border: 2px solid gray;
     cursor: pointer;
+}
+
+.charchange {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.charchange div {
+  padding: 5%;
 }
