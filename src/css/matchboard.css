@@ -15,7 +15,7 @@
 }
 
 .MBhead {
-  background-color: rgb(187, 187, 48);
+  background-color: rgb(38, 5, 82);
   color: black;
   margin: 0;
   width: 100%;
@@ -25,6 +25,14 @@
   align-items: center;
   font-size: x-large;
 }
+
+.MBhead h1 { 
+  background: linear-gradient(to bottom, #cf23cf, 
+          #ff6b08); 
+  -webkit-text-fill-color: transparent; 
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 2px #eedd44;
+} 
 
 .MBfoot {
   background-color: black;
@@ -66,7 +74,7 @@
 }
 
 .MBBoard td {
-  height: 5%;
+  height: 2.5%;
 }
 
 .MBBoard tr {
@@ -79,10 +87,10 @@
 }
 
 .stime {
-  width: 13%;
+  width: 18%;
 }
 .matchup {
-  width: 55%;
+  width: 50%;
 }
 .roundtxt {
   width: 22%;
@@ -90,3 +98,7 @@
 .pooltxt {
   width: 10%;
 }
+
+.vs-text {
+  font-size: large;
+} 
