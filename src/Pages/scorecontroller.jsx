@@ -22,7 +22,7 @@ function Controller() {
     setPopUpOpen(true);
   }, []);
 
-  const [showOps, setshowOps] = useState(true);
+  const [showOps, setshowOps] = useState(false);
 
   const toggleOps = () => {
     setshowOps(!showOps);

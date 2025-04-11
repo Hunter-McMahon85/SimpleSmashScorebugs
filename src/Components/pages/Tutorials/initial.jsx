@@ -9,7 +9,7 @@ const Initial = () => {
                 <h3>
                     Initial Setup Instructions
                 </h3>
-                <iframe width="600" height="330" src="https://www.youtube.com/embed/ICGO1dxtRzo?si=ejdblGuucgBPk8Ab" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe width="600" height="330" src="https://www.youtube.com/embed/l4LkC63rK40?si=6EmPsv57TCPBQnEW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; fullscreen; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <ol>
                     <li>Copy the link to the Scorebugs Page: https://www.simplesmashscorebugs.com/#/scorebugs</li>
                     <li>Open Open Broadcasting Software Studio (OBS)</li>
@@ -33,20 +33,32 @@ const Initial = () => {
                         </ul>
                     </li>
                 </ol>
+                <p>
+                    The scorebug should now be added and will appear in the stream preview.
+                    <br /><br />
+                    If the scorebug is not sized correctly or in the wrong spot, do the following:
+                    <br /><br />
+                    In the sources Tab, right click on "scoreboard" then "transform" and then "fit to screen" to ensure it is size correctly.
+                    <br /><br />
+                </p>
+                <h3>
+                    Adding the commentator Scorebug:
+                </h3>
+                <p>
+                    If you would like to have a seprate scene for commentators, we have a graphic for that.
+                    <br /><br />
+                    To set this up add a browser source in the commentator scene but replace the link with:
+                    <br /><br />
+                    https://www.simplesmashscorebugs.com/#/comms
+                    <br /><br />
+                </p>
                 <h4>
                     Final Checks
                 </h4>
                 <p>The scorebug utility should now be added to your stream. In case it looks funky or nothing appears. Consider the following:</p>
                 <ul>
                     <li>In the stream preview, ensure your browser source takes up the entire preview space. If not, ensure it is sized to be 1080p (1920 pixels wide 1080 pixels tall) along with your stream output</li>
-                    <li>
-                        The controller page we added initially is the scorebug theme selection page. To begin a stream, do the following:
-                        <ol>
-                            <li>Select a scorebug theme from the selection page. This will open the actual controller page</li>
-                            <li>Refresh the browser source in the stream sources panel</li>
-                            <li> Upon refresh, you should now see the singles version of the scorebug theme appear you are now ready to to use your overlay</li>
-                        </ol>
-                    </li>
+                    <li>If nothing appears in the stream preview. Make sure you select a scorebug theme from the scorebug app portion of the home page docked to OBS. Once you land on the controller screen, refresh your browser source from the sources panel. To do this, click on the browser source in the sources panel, upon doing so, a button to refresh the page should appear below the preview window, click this button to refresh the browser source.</li>
                 </ul>
             </div>
         </>

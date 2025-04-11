@@ -9,7 +9,7 @@ function SQFetch() {
     const [Streamer, setStreamer] = useState("");
     const [Slug, setSlug] = useState("");
     const [LoginTXT, setLoginTXT] = useState("Login with Start.gg");
-    const [showFields, setshowFields] = useState(true);
+    const [showFields, setshowFields] = useState(false);
 
     const toggleSection = () => {
         setshowFields(!showFields);

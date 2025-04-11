@@ -5,6 +5,7 @@ import Initial from "../Components/pages/Tutorials/initial";
 import SggAPI from "../Components/pages/Tutorials/sggAPI";
 import OBSchange from "../Components/pages/Tutorials/obschange"
 import Foot from "../Components/footer";
+import MatchTuto from "../Components/pages/Tutorials/MatchTuto";
 
 const HowToUse = () => {
     const [CurrentTutorial, setCurrentTutorial] = useState("");
@@ -19,6 +20,9 @@ const HowToUse = () => {
                 break;
             case "api":
                 setCurrentTutorial(<SggAPI />);
+                break;
+            case "match":
+                setCurrentTutorial(<MatchTuto />);
                 break;
             default:
                 break;
@@ -42,10 +46,13 @@ const HowToUse = () => {
                                 Initial Setup
                             </button>
                             <button className="instructbutton" onClick={() => { HandleSelection("obs"); }}>
-                                Changing Theme from OBS
+                                Basic Navigation
                             </button>
                             <button className="instructbutton" onClick={() => { HandleSelection("api"); }}>
                                 Using the Start.GG API
+                            </button>
+                            <button className="instructbutton" onClick={() => { HandleSelection("match"); }}>
+                                Using the Match Board
                             </button>
                         </div>
 
