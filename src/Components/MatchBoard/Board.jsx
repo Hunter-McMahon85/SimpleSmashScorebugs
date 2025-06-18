@@ -6,7 +6,7 @@ function MatchBoard() {
     let Slug = localStorage.getItem("MBslug")
     //let DState = localStorage.getItem("display");
 
-    let DState = 6;
+    let DState = localStorage.getItem("status_to_display");;
     let Token = localStorage.getItem("access_token");
     // -----------------------------Temporaily static for development----------------------------------------
     
@@ -21,6 +21,7 @@ function MatchBoard() {
     const [CurPage, setCurPage] = useState(1);
 
     useEffect(() => {
+        console.log(DState)
         switch (DState) {
             case 1:
                 // uncalled match
@@ -34,9 +35,9 @@ function MatchBoard() {
             case 6:
                 // match has been called
                 break;
+                // case to be added for ladders matchmaking
             default:
                 break;
-
         }
     }, [DState]);
 

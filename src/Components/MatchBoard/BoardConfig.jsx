@@ -16,7 +16,7 @@ function BoardConfig() {
         }
     }, [Token]);
 
-    const submit = () => {
+    const submit = (DesiredState) => {
         
         //const url = "https://www.start.gg/tournament/api-testing-3/event/dev-testing/brackets/1534774/2307767";
         const match = Slug.match(/tournament\/.*?\/event\/.*?(?=\/|$)/);
@@ -29,6 +29,7 @@ function BoardConfig() {
         
         console.log(Slug)
         localStorage.setItem('MBslug', match);
+        localStorage.setItem('status_to_display', DesiredState);
     }
 
     const login = () => {
@@ -51,10 +52,31 @@ function BoardConfig() {
                             onChange={(e) => setSlug(e.target.value)}
                         />
                     </label>
+                    <br /><br />
                     <label>
                         <Link to="/MatchBoard">
-                            <button onClick={() => { submit(); }}>
-                                Submit
+                            <button onClick={() => { submit(1); }}>
+                                Uncalled Matches
+                            </button>
+                        </Link>
+                        <Link to="/MatchBoard">
+                            <button onClick={() => { submit(2); }}>
+                                Called Matches
+                            </button>
+                        </Link>
+                        <Link to="/MatchBoard">
+                            <button onClick={() => { submit(0); }}>
+                                Matches in Progress
+                            </button>
+                        </Link>
+                        <Link to="/MatchBoard">
+                            <button onClick={() => { submit(3); }}>
+                                Completed Matches
+                            </button>
+                        </Link>
+                        <Link to="/MatchBoard">
+                            <button onClick={() => { submit(0); }}>
+                                Ladder Matchmaking
                             </button>
                         </Link>
                     </label>

@@ -25,7 +25,7 @@ const Landing = () => {
                             <h3>Scorebug App</h3>
                             <ScorebugSelect></ScorebugSelect>
                             <h3>LadderBoard</h3>
-                            <p>want to help players know when and who they play at your event? The Ladderboard is essentially a transit departures/arrivals board but for matches at your event. <br/> <br/> To get started sign in with start.gg then enter the link or SLUG to the specific bracket you want to display and select an option so see matches with that Status (ie. called, uncalled, in progress, completed etc.)</p>
+                            <p>want to help players know who they play at your event? The Ladderboard is essentially a transit departures/arrivals board but for matches at your event. <br/> <br/> To get started sign in with start.gg, enter the bracket link or SLUG and then select an option to display</p>
                             <BoardConfig></BoardConfig>
 
                         </div>
