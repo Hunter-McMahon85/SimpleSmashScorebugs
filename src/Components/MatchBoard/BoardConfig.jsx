@@ -17,18 +17,18 @@ function BoardConfig() {
     }, [Token]);
 
     const submit = () => {
-        /*
-        const url = "https://www.start.gg/tournament/api-testing-3/event/dev-testing/brackets/1534774/2307767";
-        const match = url.match(/tournament\/.*?\/event\/.*?(?=\/|$)/);
+        
+        //const url = "https://www.start.gg/tournament/api-testing-3/event/dev-testing/brackets/1534774/2307767";
+        const match = Slug.match(/tournament\/.*?\/event\/.*?(?=\/|$)/);
 
         if (match) {
             console.log(match[0]); // Output: "tournament/api-testing-3/event/dev-testing"
         } else {
             console.log("No match found.");
         }
-        */
+        
         console.log(Slug)
-        localStorage.setItem('MBslug', Slug);
+        localStorage.setItem('MBslug', match);
     }
 
     const login = () => {
