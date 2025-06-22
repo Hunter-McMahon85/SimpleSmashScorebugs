@@ -6,7 +6,7 @@ function MatchBoard() {
     let Slug = localStorage.getItem("MBslug")
     //let DState = localStorage.getItem("display");
 
-    let DState = localStorage.getItem("status_to_display");;
+    let DState = localStorage.getItem("status_to_display");
     let Token = localStorage.getItem("access_token");
     // -----------------------------Temporaily static for development----------------------------------------
     
@@ -36,6 +36,7 @@ function MatchBoard() {
                 // match has been called
                 break;
                 // case to be added for ladders matchmaking
+                // ladders use state 6 when a match is found
             default:
                 break;
         }

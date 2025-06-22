@@ -60,12 +60,12 @@ function BoardConfig() {
                             </button>
                         </Link>
                         <Link to="/MatchBoard">
-                            <button onClick={() => { submit(2); }}>
+                            <button onClick={() => { submit(6); }}>
                                 Called Matches
                             </button>
                         </Link>
                         <Link to="/MatchBoard">
-                            <button onClick={() => { submit(0); }}>
+                            <button onClick={() => { submit(2); }}>
                                 Matches in Progress
                             </button>
                         </Link>
@@ -75,7 +75,7 @@ function BoardConfig() {
                             </button>
                         </Link>
                         <Link to="/MatchBoard">
-                            <button onClick={() => { submit(0); }}>
+                            <button onClick={() => { submit(6); }}>
                                 Ladder Matchmaking
                             </button>
                         </Link>
