@@ -11,7 +11,7 @@ const Initial = () => {
                 </h3>
                 <iframe width="600" height="330" src="https://www.youtube.com/embed/l4LkC63rK40?si=6EmPsv57TCPBQnEW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; fullscreen; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 <ol>
-                    <li>Copy the link to the Scorebugs Page: https://www.simplesmashscorebugs.com/#/scorebugs</li>
+                    <li>Copy the link to the Scorebugs Page: https://hunter-mcmahon85.github.io/SimpleSmashScorebugs//#/scorebugs</li>
                     <li>Open Open Broadcasting Software Studio (OBS)</li>
                     <li>From the OBS topbar, click on "Docks" then on "Custom Browser Docks"</li>
                     <li>In the "Custom Browser Docks" menu, put an name in the dock name section and paste the link to the scorebugs page in the "URL" field and click apply</li>
@@ -24,7 +24,7 @@ const Initial = () => {
                         When prompted, Click "Create New", Enter "Scorebug" into the text box and Click "ok"
                     </li>
                     <li>
-                        in the URL field, enter the link: https://www.simplesmashscorebugs.com/#/scoreboard<br />
+                        in the URL field, enter the link: https://hunter-mcmahon85.github.io/SimpleSmashScorebugs//#/scoreboard<br />
                         Then, ensure the following before clicking ok:
                         <ul>
                             <li>Width is Set to 1920</li>
@@ -49,7 +49,7 @@ const Initial = () => {
                     <br /><br />
                     To set this up add a browser source in the commentator scene but replace the link with:
                     <br /><br />
-                    https://www.simplesmashscorebugs.com/#/comms
+                    https://hunter-mcmahon85.github.io/SimpleSmashScorebugs/#/comms
                     <br /><br />
                 </p>
                 <h4>

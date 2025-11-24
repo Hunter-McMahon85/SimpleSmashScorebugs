@@ -24,7 +24,7 @@ function StartMsg({ onClose }) {
                             When prompted, Click "Create New", Enter "Scorebug" into the text box and Click "ok"
                         </li>
                         <li>
-                            in the URL field, enter the link:<br /><br /> https://www.simplesmashscorebugs.com/#/scoreboard<br /><br />
+                            in the URL field, enter the link:<br /><br /> https://hunter-mcmahon85.github.io/SimpleSmashScorebugs/#/scoreboard<br /><br />
                             Then, ensure the following before clicking ok:
                             <ul>
                                 <li>Width is Set to 1920</li>
@@ -49,7 +49,7 @@ function StartMsg({ onClose }) {
                         <br /><br />
                         To set this up do the same process as before in the commentator scene but use the following link as the browser source URL:
                         <br /><br />
-                        https://www.simplesmashscorebugs.com/#/comms
+                        https://hunter-mcmahon85.github.io/SimpleSmashScorebugs/#/comms
                         <br /><br />
                         For more in depth instuctions on setup and how to use the scorbug, <Link to="/howtouse">please view the setup/support documentation </Link>
                     </p>

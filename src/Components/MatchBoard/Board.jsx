@@ -218,7 +218,7 @@ function MatchBoard() {
                     </table>
                 </div>
                 <div className="MBfoot">
-                    <p>Utility Provided By SimpleSmashScorebugs.com</p>
+                    <p>Utility Provided By https://hunter-mcmahon85.github.io/SimpleSmashScorebugs</p>
                 </div>
             </div>
         </>
