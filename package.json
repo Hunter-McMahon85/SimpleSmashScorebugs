@@ -2,7 +2,7 @@
   "name": "simplesmashscorebugs",
   "private": true,
   "version": "0.0.0",
-  "homepage": "www.simplesmashscorebugs.com",
+  "homepage": "https://hunter-mcmahon85.github.io/SimpleSmashScorebugs/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
