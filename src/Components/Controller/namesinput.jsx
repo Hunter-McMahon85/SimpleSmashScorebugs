@@ -235,6 +235,7 @@ function Names() {
   };
 
   function HandleEntry() {
+
     if (P11 !== "") {
       localStorage.setItem("p11", P11);
     }
@@ -292,6 +293,46 @@ function Names() {
     setenterFields(false);
   }
 
+  const NewHandleEntry = (action) => {
+    const Fields = {
+      "p11": P11,
+      "p12": P12,
+      "p21": P21,
+      "p22": P22,
+      "Pronoun11": Pronoun11,
+      "Pronoun12": Pronoun12,
+      "Pronoun21": Pronoun21,
+      "Pronoun22": Pronoun22,
+      "round": RoundName,
+      "pool": PoolName,
+      "commie1": Commie1,
+      "commie2": Commie2,
+      "commiep1": Commie1p,
+      "commiep2": Commie2p
+    }
+
+    if (action == "Update") {
+      for (var Key in Fields) {
+        if (Fields[Key] !== "") {
+          localStorage.setItem(Key, Fields[Key]);
+        }
+      }
+      if (Char11_a !== "") {
+        UI_icons(Char11_a, 11)
+      }
+      if (Char12_a !== "") {
+        UI_icons(Char12_a, 12)
+      }
+      if (Char21_a !== "") {
+        UI_icons(Char21_a, 21)
+      }
+      if (Char22_a !== "") {
+        UI_icons(Char22_a, 22)
+      }
+    }
+
+    setenterFields(false);
+  }
   return (
     <>
       <h2>
@@ -301,10 +342,11 @@ function Names() {
         <div className="modcontain">
           <div className="mod">
             <h3 className="modtxt">ENTER OR MODIFY NEW MATCH INFO</h3>
-            <p className="modtxt">Changes are only applied to fields that are filled. For singles, aka 1vs1, only fill for partner A on each. Fill all for doubles</p>
+            <p className="modtxt">Changes applied upon clicking Enter. Only fill fields A and C for singles</p>
             <input type="text" value={RoundName} placeholder="round" onChange={handleRound} />
             <input type="text" value={PoolName} placeholder="pool" onChange={handlePool} />
             <br /><br />
+
             <div className="TagEntry">
               <div className="pair1">
                 <h3>Player/Duo 1:</h3>
@@ -317,30 +359,30 @@ function Names() {
                 <Autocomplete options={entered_name} trigger="" placeholder="Partner A Character" matchAny={true} value={Char11_a} onChange={(newValue) => handleP11a(newValue)} />
                 <Autocomplete options={entered_name} trigger="" placeholder="Partner B Character" matchAny={true} value={Char12_a} onChange={(newValue) => handleP12a(newValue)} />
               </div>
-
               <div className="pair2">
                 <h3>Player/Duo 2:</h3>
 
-                <input type="text" value={P21} placeholder="Partner A Tag" onChange={handleP21} />
-                <input type="text" value={P22} placeholder="Partner B Tag" onChange={handleP22} />
+                <input type="text" value={P21} placeholder="Partner C Tag" onChange={handleP21} />
+                <input type="text" value={P22} placeholder="Partner D Tag" onChange={handleP22} />
                 <br /><br />
-                <input type="text" value={Pronoun21} placeholder="Partner A Pronoun" onChange={handlePronoun21} />
-                <input type="text" value={Pronoun22} placeholder="Partner B Pronoun" onChange={handlePronoun22} />
+                <input type="text" value={Pronoun21} placeholder="Partner C Pronoun" onChange={handlePronoun21} />
+                <input type="text" value={Pronoun22} placeholder="Partner D Pronoun" onChange={handlePronoun22} />
                 <br /><br />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner A Character" matchAny={true} value={Char21_a} onChange={(newValue) => handleP21a(newValue)} />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner B Character" matchAny={true} value={Char22_a} onChange={(newValue) => handleP22a(newValue)} />
+                <Autocomplete options={entered_name} trigger="" placeholder="Partner C Character" matchAny={true} value={Char21_a} onChange={(newValue) => handleP21a(newValue)} />
+                <Autocomplete options={entered_name} trigger="" placeholder="Partner D Character" matchAny={true} value={Char22_a} onChange={(newValue) => handleP22a(newValue)} />
               </div>
             </div>
+
             <br /><br />
-            <button onClick={HandleEntry}>Enter</button>
+            <button className="Cancel" onClick={() => NewHandleEntry()}>Cancel</button>
+            <button onClick={() => NewHandleEntry("Update")}>Enter</button>
           </div>
         </div>
       )}
 
       <div className="charchange">
         <div className="pair1">
-          <Autocomplete options={entered_name} trigger="" placeholder={P11 + " Character"} matchAny={true} value={Char11_a} onChange={(newValue) => handleP11a(newValue)} />
-          <button onClick={() => UI_icons(Char11_a, 11)}>Set {P11}'s Icons</button>
+          <h3>Player A: {P11}</h3>
           <div>
             <img src={Char11_arr[0]} alt="character icon" onClick={() => Update_Icon(0, 11)} />
             <img src={Char11_arr[1]} alt="character icon" onClick={() => Update_Icon(1, 11)} />
@@ -351,9 +393,7 @@ function Names() {
             <img src={Char11_arr[6]} alt="character icon" onClick={() => Update_Icon(6, 11)} />
             <img src={Char11_arr[7]} alt="character icon" onClick={() => Update_Icon(7, 11)} />
           </div>
-
-          <Autocomplete options={entered_name} trigger="" placeholder={P12 + " Character"} matchAny={true} value={Char12_a} onChange={(newValue) => handleP12a(newValue)} />
-          <button onClick={() => UI_icons(Char12_a, 12)}>Set {P12}'s Icons</button>
+          <h3>Player B: {P11}</h3>
           <div>
             <img src={Char12_arr[0]} alt="character icon" onClick={() => Update_Icon(0, 12)} />
             <img src={Char12_arr[1]} alt="character icon" onClick={() => Update_Icon(1, 12)} />
@@ -367,8 +407,7 @@ function Names() {
         </div>
 
         <div className="pair2">
-          <Autocomplete options={entered_name} trigger="" placeholder={P21 + " Character"} matchAny={true} value={Char21_a} onChange={(newValue) => handleP21a(newValue)} />
-          <button onClick={() => UI_icons(Char21_a, 21)}>Set {P21}'s Icons</button>
+          <h3>Player C: {P21}</h3>
           <div>
             <img src={Char21_arr[0]} alt="character icon" onClick={() => Update_Icon(0, 21)} />
             <img src={Char21_arr[1]} alt="character icon" onClick={() => Update_Icon(1, 21)} />
@@ -379,9 +418,7 @@ function Names() {
             <img src={Char21_arr[6]} alt="character icon" onClick={() => Update_Icon(6, 21)} />
             <img src={Char21_arr[7]} alt="character icon" onClick={() => Update_Icon(7, 21)} />
           </div>
-
-          <Autocomplete options={entered_name} trigger="" placeholder={P22 + " Character"} matchAny={true} value={Char22_a} onChange={(newValue) => handleP22a(newValue)} />
-          <button onClick={() => UI_icons(Char22_a, 22)}>Set {P22}'s Icons</button>
+          <h3>Player D: {P22}</h3>
           <div>
             <img src={Char22_arr[0]} alt="character icon" onClick={() => Update_Icon(0, 22)} />
             <img src={Char22_arr[1]} alt="character icon" onClick={() => Update_Icon(1, 22)} />

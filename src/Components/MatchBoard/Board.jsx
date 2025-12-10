@@ -11,9 +11,8 @@ function MatchBoard() {
     // -----------------------------Temporaily static for development----------------------------------------
     
 
-    // this is the number of rows in the table, eventually determined by window size but static for initial beta release
+    // M rows in table
     let m = 10;
-    //------------------------------
     const [Active, setActive] = useState([]);
     const [Idle, setIdle] = useState([]);
     const [Board, setBoard] = useState(<tr></tr>);

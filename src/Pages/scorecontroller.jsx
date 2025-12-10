@@ -7,21 +7,12 @@ import "../css/control.css"
 
 function Controller() {
   let GM = "";
-
   let p1score = 0;
   let p2score = 0;
   localStorage.setItem("p1score", p1score);
   localStorage.setItem("p2score", p2score);
-
   const [HideMSG, setHideMSG] = useState("Scorebug is Visible");
-
   const [isPopUpOpen, setPopUpOpen] = useState(false);
-
-  useEffect(() => {
-    // Open the modal when the component mounts
-    setPopUpOpen(true);
-  }, []);
-
   const [showOps, setshowOps] = useState(false);
 
   const toggleOps = () => {
@@ -76,6 +67,12 @@ function Controller() {
     }
     Show_MU()
   };
+
+  useEffect(() => {
+    // stuff to do on page open
+    setPopUpOpen(true);
+    GMode("S");
+  }, []);
 
   return (
     <>
