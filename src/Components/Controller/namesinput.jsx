@@ -234,65 +234,6 @@ function Names() {
     setPoolName(event.target.value);
   };
 
-  function HandleEntry() {
-
-    if (P11 !== "") {
-      localStorage.setItem("p11", P11);
-    }
-    if (P12 !== "") {
-      localStorage.setItem("p12", P12);
-    }
-    if (P21 !== "") {
-      localStorage.setItem("p21", P21);
-    }
-    if (P22 !== "") {
-      localStorage.setItem("p22", P22);
-    }
-    if (Pronoun11 !== "") {
-      localStorage.setItem("Pronoun11", Pronoun11);
-    }
-    if (Pronoun12 !== "") {
-      localStorage.setItem("Pronoun12", Pronoun12);
-    }
-    if (Pronoun21 !== "") {
-      localStorage.setItem("Pronoun21", Pronoun21);
-    }
-    if (Pronoun22 !== "") {
-      localStorage.setItem("Pronoun22", Pronoun22);
-    }
-    if (RoundName !== "") {
-      localStorage.setItem("round", RoundName);
-    }
-    if (PoolName !== "") {
-      localStorage.setItem("pool", PoolName);
-    }
-    if (Commie1 !== "") {
-      localStorage.setItem("commie1", Commie1);
-    }
-    if (Commie2 !== "") {
-      localStorage.setItem("commie2", Commie2);
-    }
-    if (Commie1p !== "") {
-      localStorage.setItem("commiep1", Commie1p);
-    }
-    if (Commie2p !== "") {
-      localStorage.setItem("commiep2", Commie2p);
-    }
-    if (Char11_a !== "") {
-      UI_icons(Char11_a, 11)
-    }
-    if (Char12_a !== "") {
-      UI_icons(Char12_a, 12)
-    }
-    if (Char21_a !== "") {
-      UI_icons(Char21_a, 21)
-    }
-    if (Char22_a !== "") {
-      UI_icons(Char22_a, 22)
-    }
-    setenterFields(false);
-  }
-
   const NewHandleEntry = (action) => {
     const Fields = {
       "p11": P11,

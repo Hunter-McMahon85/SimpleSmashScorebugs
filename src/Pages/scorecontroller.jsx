@@ -68,6 +68,10 @@ function Controller() {
     Show_MU()
   };
 
+  const setTheme =  (T) => {
+    localStorage.setItem("BugTheme", T);
+  }
+
   useEffect(() => {
     // stuff to do on page open
     setPopUpOpen(true);
@@ -81,14 +85,16 @@ function Controller() {
       )}
       <div className="UI_Contain">
         <p>*player/duo 1 will always be the leftmost or topmost tag on the scorebug</p>
-        <h2>Scorebug Visual Options <br /><button onClick={toggleOps}> {showOps ? 'Hide Options' : 'Show Options'}</button></h2>
+        <h2>Scorebug Options <br /><button onClick={toggleOps}> {showOps ? 'Hide Options' : 'Show Options'}</button></h2>
         {showOps && (
           <>
             <Link to="/">
               <button className="bugselect">
-                Change Scorebug Theme
+                Back To Website
               </button>
             </Link>
+            <button onClick={() => setTheme("NTZ")}>NTZ</button>
+            <button onClick={() => setTheme("DH")}>DH</button>
             <br />
             <button onClick={() => Show_MU()}>Show Match Intro</button>
             <button onClick={() => GMode("D")}>Doubles</button>

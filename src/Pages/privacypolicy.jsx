@@ -15,14 +15,10 @@ const PP = () => {
                     <div className="instructions">
                         <div className='InstructionContent'>
                             <p>
-                                When signing in with start.gg, you consent to simplesmashscorebugs making API request to the start.gg api on your behalf.
-                                Information such as your start.gg email account and username may be shared with simplesmashscorebugs if you choose to sign in with start.gg's oauth.
-                                This Information is not collected by simplesmashscorebugs but is used to obtain an API token to make request on your behalf. 
+                                This website does not collect any user data. However, when using start.gg integrations, you consent to it making calls to the start.gg API on your behalf
                                 <br />
                                 <br />
-                                At the moment of this policies current drafting, there may not be google adsense or other advertising materials on the site. 
-                                However there is intent to add these to the webpage in the future and said services may utilize 3rd party trackers and cookies to target advertising. 
-                                While these currently are not presently, they may be added in the future.
+                                No form of tracking or adverstising for monetization has been added at this time. 
                             </p>
                         </div>
                     </div>

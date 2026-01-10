@@ -15,11 +15,10 @@ const Terms = () => {
                     <div className="instructions">
                         <div className='InstructionContent'>
                             <p>
-                                Do not use simplesmashscorebugs or its api integrations for malicious purposes. 
-                                (IE. accessing accounts that arent yours etc.). Otherwise feel free to use this scorebug service freely for your smash bros streams.
+                                Do not use Simple Smash Scorebugs for mallicous purposes. Bear in mind that the site owner reserves the right to proctor access as seen fit and modify or revoke your ability to access the service at any time. 
                                 <br />
                                 <br />
-                                Additionally, please do not pass this service off as your own. This service is an independent third party from start.gg and Nintendo (who owns the rights to the smash bros franchise). We do not claim ownership of either parties assets. What we do claim ownership of is the functionality of the scorebug utility. The code and website content for this utility is authored by Hunter McMahon who reserves the right to restrict access to this service.
+                                Start.gg, Super Smash Bros, Nintendo, Open Broadcasting Software are independent entities that hold no formal relation to this site. This website is not monetized in any fassion and borrowed assets are done so under fair use and are still property of their respective copyright owners. 
                             </p>
                         </div>
                     </div>
