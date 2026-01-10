@@ -93,8 +93,20 @@ function Controller() {
                 Back To Website
               </button>
             </Link>
-            <button onClick={() => setTheme("NTZ")}>NTZ</button>
-            <button onClick={() => setTheme("DH")}>DH</button>
+            <h3>Scorebug Theme </h3>
+            <div className='InstructionContent'>
+              <p>Select a scorebug by selecting a button below. To learn how to set up this utility, see the <Link to="/tutorials">tutorials</Link> page</p>
+              <div className="themebuttons">
+                <button className="themebutton" onClick={() => setTheme("NTZ")}>
+                  <img src="../../SBpreview/NTZpreview.PNG" alt="NTZ" className="button-image" />
+                  No Tech Zone
+                </button>
+                <button className="themebutton" onClick={() => setTheme("DH")}>
+                  <img src="../../SBpreview/DHpreview.PNG" alt="Duck Hunt" className="button-image" />
+                  Duck Hunt
+                </button>
+              </div>
+            </div>
             <br />
             <button onClick={() => Show_MU()}>Show Match Intro</button>
             <button onClick={() => GMode("D")}>Doubles</button>

@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import NavBar from "../Components/navbar";
 import Foot from '../Components/footer';
 import BoardConfig from '../Components/MatchBoard/BoardConfig';
-import ScorebugSelect from '../Components/pages/Landing/scorebugs';
 import '../css/Landing.css'
 
 const Landing = () => {
+     const HandleSelection = () => {
+        localStorage.setItem("BugTheme", "DB");
+    }
     return (
         <>
             <div className="landcontain">
@@ -20,12 +22,22 @@ const Landing = () => {
                             <p>
                                 Simple Smash Scorebugs provides a simple, download free, overlay solution for your Super Smash Bros ultimate Streams.
                                 <br /><br />
-                                To get Started, check out one of our turotial pages or click on one of the utilities below
+                                To get Started, check out one of our <Link to="/tutorials">turotial pages</Link> or click on one of the utilities below
                             </p>
                             <h3>Scorebug App</h3>
-                            <ScorebugSelect></ScorebugSelect>
+
+                            <div className='InstructionContent'>
+                                <div className="themebuttons">
+                                    <Link to="/controller">
+                                        <button className="instructbutton" onClick={() => { HandleSelection(); }}>
+                                            Go To Scorebug Controller (See tutorials for setup info)
+                                        </button>
+                                    </Link>
+                                </div>
+                            </div>
+
                             <h3>LadderBoard</h3>
-                            <p>want to help players know who they play at your event? The Ladderboard is essentially a transit departures/arrivals board but for matches at your event. <br/> <br/> To get started sign in with start.gg, enter the bracket link or SLUG and then select an option to display</p>
+                            <p>want to help players know who they play at your event? The Ladderboard is essentially a transit departures/arrivals board but for matches at your event. <br /> <br /> To get started sign in with start.gg, enter the bracket link or SLUG and then select an option to display</p>
                             <BoardConfig></BoardConfig>
 
                         </div>

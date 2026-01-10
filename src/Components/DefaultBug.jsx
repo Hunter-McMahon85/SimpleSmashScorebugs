@@ -11,7 +11,7 @@ const DefaultBug= () => {
                     <br/><br/>
                     Note that this page is designed for 1920 x 1080 stream output
                     <br/><br/>
-                    For More info/help see 
+                    For More info/help see https://hunter-mcmahon85.github.io/SimpleSmashScorebugs/#/tutorials
 
                 </h2>
             </div>
