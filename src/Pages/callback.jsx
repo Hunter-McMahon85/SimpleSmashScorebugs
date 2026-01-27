@@ -18,7 +18,7 @@ const Callback = () => {
 
   const exchangeAuthorizationCode = async (authorizationCode) => {
     try {
-      // need a better cors proxy solution. this will only work for testing
+      // need a better cors proxy solution. maybe?
       const response = await axios.post('https://shy-disk-9135.gochargershunter.workers.dev/?https://api.start.gg/oauth/access_token', {
         grant_type: 'authorization_code',
         client_id: oauthConfig.client_id,
@@ -35,12 +35,14 @@ const Callback = () => {
       const { access_token, refresh_token } = response.data;
       localStorage.setItem('access_token', access_token);
       localStorage.setItem('refresh_token', refresh_token);
+      localStorage.setItem("streamconfig", true)
 
-      // Redirect to a protected page after successful login
-      let context = localStorage.getItem('LoginContext')
+      // Redirect to page we clicked from
+      let context = localStorage.getItem('LoginContext');
       
       switch (context){
         case "SQ":
+          
           navigate('/controller', { replace: true });
           break;
         case "MB":

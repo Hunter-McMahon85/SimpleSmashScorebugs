@@ -9,7 +9,7 @@ function SQFetch() {
     const [Streamer, setStreamer] = useState("");
     const [Slug, setSlug] = useState("");
     const [LoginTXT, setLoginTXT] = useState("Login with Start.gg");
-    const [showFields, setshowFields] = useState(false);
+    const [showFields, setshowFields] = useState(localStorage.getItem("streamconfig"));
 
     const toggleSection = () => {
         setshowFields(!showFields);
@@ -18,6 +18,7 @@ function SQFetch() {
     useEffect(() => {
         if (Token != null) {
             setLoginTXT("Refresh Start.GG Login");
+            setshowFields(true);
         }
     }, [Token]);
 
@@ -145,21 +146,26 @@ function SQFetch() {
     return (
         <>
             <h2>
-                Start.gg Stream Queue<br /><button onClick={toggleSection}> {showFields ? 'Hide Options' : 'Show Options'}</button>
+            <button onClick={toggleSection}>Configure Stream Queue</button>
             </h2>
 
 
             {showFields && (
-                <div>
-                    <button onClick={login}>{LoginTXT}</button>
-                    <br />
-                    <input type="text" placeholder="Enter Tourney Slug" onChange={handleSlug} />
-                    <br />
-                    <input type="text" placeholder="Enter Streamer Name" onChange={handleStream} />
+                <div className="modcontain">
+                    <div className="mod">
+                        <button onClick={login}>{LoginTXT}</button>
+                        <br />
+                        <input type="text" placeholder="Enter Tourney Slug" onChange={handleSlug} />
+                        <br />
+                        <input type="text" placeholder="Enter Streamer Name" onChange={handleStream} />
+
+                        <br /><br />
+                        <button onClick={toggleSection}>Enter</button>
+                    </div>
                 </div>
             )}
             <br />
-            <button onClick={() => FetchQueue()}>Fetch From Stream Queue</button>
+            <h2><button onClick={() => FetchQueue()}>Fetch From Stream Queue</button></h2>
 
         </>)
 }

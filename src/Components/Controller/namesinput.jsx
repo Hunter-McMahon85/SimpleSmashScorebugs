@@ -3,6 +3,7 @@ import Autocomplete from "react-autocomplete-input";
 import "react-autocomplete-input/dist/bundle.css";
 import entered_name from "./charnames";
 import names_list_in_files from "./charfilenames";
+import SQFetch from "./StreamQueFetch";
 import "../../css/control.css";
 
 function Names() {
@@ -320,7 +321,7 @@ function Names() {
           </div>
         </div>
       )}
-
+      <SQFetch />
       <div className="charchange">
         <div className="pair1">
           <h3>Player A: {P11}</h3>
