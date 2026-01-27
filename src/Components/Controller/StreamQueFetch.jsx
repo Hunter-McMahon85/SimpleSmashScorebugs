@@ -13,13 +13,13 @@ function SQFetch() {
 
     const toggleSection = () => {
         setshowFields(!showFields);
-        localStorage.setItem("streamconfig", showFields);
+        localStorage.setItem("streamconfig", !showFields);
     };
 
     useEffect(() => {
+        setshowFields(localStorage.getItem("streamconfig"));
         if (Token != null) {
             setLoginTXT("Refresh Start.GG Login");
-            setshowFields(localStorage.getItem("streamconfig"));
         }
     }, [Token]);
 
