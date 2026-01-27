@@ -12,7 +12,7 @@ function Controller() {
   localStorage.setItem("p1score", p1score);
   localStorage.setItem("p2score", p2score);
   const [HideMSG, setHideMSG] = useState("Scorebug is Visible");
-  const [isPopUpOpen, setPopUpOpen] = useState(false);
+  const [isPopUpOpen, setPopUpOpen] = useState(true);
   const [showOps, setshowOps] = useState(false);
 
   const toggleOps = () => {
@@ -72,16 +72,24 @@ function Controller() {
     localStorage.setItem("BugTheme", T);
   }
 
+  function PopupToggle() {
+    setPopUpOpen(!isPopUpOpen);
+    localStorage.setItem("ShowStartPU", !isPopUpOpen);
+  }
+
   useEffect(() => {
     // stuff to do on page open
-    setPopUpOpen(true);
+    let PUStat = JSON.parse(localStorage.getItem("ShowStartPU"))
+    if (PUStat != null) {
+      setPopUpOpen(PUStat);
+    }
     GMode("S");
   }, []);
 
   return (
     <>
       {isPopUpOpen && (
-        <StartMsg onClose={() => setPopUpOpen(false)} />
+        <StartMsg onClose={() => PopupToggle()} />
       )}
       <div className="UI_Contain">
         <p>*player/duo 1 will always be the leftmost or topmost tag on the scorebug</p>
