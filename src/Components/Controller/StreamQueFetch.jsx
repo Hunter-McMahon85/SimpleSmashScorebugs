@@ -12,8 +12,8 @@ function SQFetch() {
     const [showFields, setshowFields] = useState(localStorage.getItem("streamconfig"));
 
     const toggleSection = () => {
-        localStorage.setItem("streamconfig") = !showFields;
         setshowFields(!showFields);
+        localStorage.setItem("streamconfig") = showFields;
     };
 
     useEffect(() => {
