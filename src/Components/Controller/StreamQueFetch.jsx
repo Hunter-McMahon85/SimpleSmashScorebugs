@@ -13,7 +13,7 @@ function SQFetch() {
 
     const toggleSection = () => {
         setshowFields(!showFields);
-        localStorage.setItem("streamconfig", JSON.stringify(showFields));
+        localStorage.setItem("streamconfig", JSON.stringify(!showFields));
     };
 
     useEffect(() => {
