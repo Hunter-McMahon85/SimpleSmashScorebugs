@@ -35,7 +35,7 @@ const Callback = () => {
       const { access_token, refresh_token } = response.data;
       localStorage.setItem('access_token', access_token);
       localStorage.setItem('refresh_token', refresh_token);
-      localStorage.setItem("streamconfig", true)
+      //localStorage.setItem("streamconfig", true)
 
       // Redirect to page we clicked from
       let context = localStorage.getItem('LoginContext');
