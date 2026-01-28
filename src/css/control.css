@@ -72,10 +72,9 @@
   color: #41d941;
 }
 
-
 .modcontain input {
-    margin: 10px;
-    padding: 10px;
+  margin: 10px;
+  padding: 10px;
 }
 
 .mod {
@@ -93,21 +92,20 @@
 }
 
 .mod button {
-    color: black;
-    background-color: lightgreen;
-    border: 2px solid #41d941;
-    padding: 6px 20px;
-    border-radius: 15px;
-    cursor: pointer;
-    margin-left: 5px;
-    font-size: x-large;
+  color: black;
+  background-color: lightgreen;
+  border: 2px solid #41d941;
+  padding: 6px 20px;
+  border-radius: 15px;
+  margin-left: 5px;
+  font-size: x-large;
 }
 
 .mod button:hover {
-    color: black;
-    background-color: white;
-    border: 2px solid gray;
-    cursor: pointer;
+  color: black;
+  background-color: white;
+  border: 2px solid gray;
+  cursor: pointer;
 }
 
 .charchange {
@@ -115,6 +113,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  width: 100%;
 }
 
 .charchange div {
@@ -122,5 +121,24 @@
 }
 
 .charchange h3 {
+  color: white;
+}
+
+.ControlContain {
+  background-color: gray;
+}
+
+.ControlContain button {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+.ControlContain button:hover {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+  background-color: black;
   color: white;
 }

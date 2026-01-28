@@ -88,55 +88,51 @@ function Controller() {
 
   return (
     <>
-      {isPopUpOpen && (
-        <StartMsg onClose={() => PopupToggle()} />
-      )}
-      <div className="UI_Contain">
-        <p>*player/duo 1 will always be the leftmost or topmost tag on the scorebug</p>
-        <h2>Scorebug Options <br /><button onClick={toggleOps}> {showOps ? 'Hide Options' : 'Show Options'}</button></h2>
-        {showOps && (
-          <div className="modcontain">
-            <div className="mod">
-              <Link to="/">
-                <button className="bugselect">
-                  Back To Website
-                </button>
-              </Link>
-              <h3>Scorebug Theme </h3>
-              <div className='InstructionContent'>
-                <p className="modtxt">Select a scorebug by selecting a button below. To learn how to set up this utility, see the <Link to="/tutorials">tutorials</Link> page</p>
-                <div className="themebuttons">
-                  <button className="themebutton" onClick={() => setTheme("NTZ")}>
-                    <img src="SBpreview/NTZpreview.PNG" alt="NTZ" className="button-image" />
-                    No Tech Zone
-                  </button>
-                  <button className="themebutton" onClick={() => setTheme("DH")}>
-                    <img src="SBpreview/DHpreview.PNG" alt="Duck Hunt" className="button-image" />
-                    Duck Hunt
-                  </button>
-                </div>
-              </div>
-              <br />
-              <button onClick={() => Show_MU()}>Show Match Intro</button>
-              <button onClick={() => GMode("D")}>Doubles</button>
-              <button onClick={() => GMode("S")}>Singles</button>
-              <br />
-              <p>{HideMSG}</p>
-              <button onClick={() => GMode("H")}>Hide Scorebug</button>
-              <br /><br />
-              <button className="Cancel" onClick={toggleOps}>Close Settings</button>
-            </div>
-          </div>
+      <div className="ControlContain">
+        {isPopUpOpen && (
+          <StartMsg onClose={() => PopupToggle()} />
         )}
+        <div className="UI_Contain">
+          <h2><button onClick={toggleOps}> Scorebug Options </button> <Link to="/"><button className="bugselect">Return To Website</button></Link></h2>
+          {showOps && (
+            <div className="modcontain">
+              <div className="mod">
+                <h3 className="modtxt">Scorebug Theme </h3>
+                <div className='InstructionContent'>
+                  <p className="modtxt">Select a scorebug by selecting a button below. To learn how to set up this utility, see the <Link to="/tutorials">tutorials</Link> page. Note that player/duo 1 will always be the leftmost or topmost tag on the scorebug</p>
+                  <div className="themebuttons">
+                    <button className="themebutton" onClick={() => setTheme("NTZ")}>
+                      <img src="SBpreview/NTZpreview.PNG" alt="NTZ" className="button-image" />
+                      No Tech Zone
+                    </button>
+                    <button className="themebutton" onClick={() => setTheme("DH")}>
+                      <img src="SBpreview/DHpreview.PNG" alt="Duck Hunt" className="button-image" />
+                      Duck Hunt
+                    </button>
+                  </div>
+                </div>
+                <br />
+                <button onClick={() => Show_MU()}>Show Match Intro</button>
+                <button onClick={() => GMode("D")}>Doubles</button>
+                <button onClick={() => GMode("S")}>Singles</button>
+                <br />
+                <p>{HideMSG}</p>
+                <button onClick={() => GMode("H")}>Hide Scorebug</button>
+                <br /><br />
+                <button className="Cancel" onClick={toggleOps}>Close Settings</button>
+              </div>
+            </div>
+          )}
 
-        
-        <h2>Scoring</h2>
-        <div className="scoring">
-          <button onClick={() => score(1, 1)}>Win Player/Duo 1</button>
-          <button onClick={() => reset_scores()}>Reset Score</button>
-          <button onClick={() => score(2, 1)}>Win Player/Duo 2</button>
+
+          <h2>Scoring</h2>
+          <div className="scoring">
+            <button onClick={() => score(1, 1)}>Win Player/Duo 1</button>
+            <button onClick={() => reset_scores()}>Reset Score</button>
+            <button onClick={() => score(2, 1)}>Win Player/Duo 2</button>
+          </div>
+          <Names />
         </div>
-        <Names />
       </div>
     </>
   );

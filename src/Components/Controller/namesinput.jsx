@@ -8,9 +8,14 @@ import "../../css/control.css";
 
 function Names() {
   const [enterFields, setenterFields] = useState(false);
-
   const toggleSection = () => {
     setenterFields(!enterFields);
+  };
+
+  const [modComs, setmodComs] = useState(false);
+
+  const toggleModComs = () => {
+    setmodComs(!modComs);
   };
 
   const [Char11_a, setChar11_a] = useState("");
@@ -273,55 +278,16 @@ function Names() {
       }
     }
 
-    setenterFields(false);
+    if (modComs) setmodComs(false);
+    if (enterFields) setenterFields(false);
   }
   return (
     <>
-      <h2>
-        Player Info <br /><button onClick={toggleSection}>Manual Entry</button>
-      </h2>
-      {enterFields && (
-        <div className="modcontain">
-          <div className="mod">
-            <h3 className="modtxt">ENTER OR MODIFY NEW MATCH INFO</h3>
-            <p className="modtxt">Changes applied upon clicking Enter. Only fill fields A and C for singles</p>
-            <input type="text" value={RoundName} placeholder="round" onChange={handleRound} />
-            <input type="text" value={PoolName} placeholder="pool" onChange={handlePool} />
-            <br /><br />
-
-            <div className="TagEntry">
-              <div className="pair1">
-                <h3>Player/Duo 1:</h3>
-                <input type="text" value={P11} placeholder="Partner A tag" onChange={handleP11} />
-                <input type="text" value={P12} placeholder="Partner B tag" onChange={handleP12} />
-                <br /><br />
-                <input type="text" value={Pronoun11} placeholder="Partner A Pronoun" onChange={handlePronoun11} />
-                <input type="text" value={Pronoun12} placeholder="Partner B Pronoun" onChange={handlePronoun12} />
-                <br /><br />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner A Character" matchAny={true} value={Char11_a} onChange={(newValue) => handleP11a(newValue)} />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner B Character" matchAny={true} value={Char12_a} onChange={(newValue) => handleP12a(newValue)} />
-              </div>
-              <div className="pair2">
-                <h3>Player/Duo 2:</h3>
-
-                <input type="text" value={P21} placeholder="Partner C Tag" onChange={handleP21} />
-                <input type="text" value={P22} placeholder="Partner D Tag" onChange={handleP22} />
-                <br /><br />
-                <input type="text" value={Pronoun21} placeholder="Partner C Pronoun" onChange={handlePronoun21} />
-                <input type="text" value={Pronoun22} placeholder="Partner D Pronoun" onChange={handlePronoun22} />
-                <br /><br />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner C Character" matchAny={true} value={Char21_a} onChange={(newValue) => handleP21a(newValue)} />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner D Character" matchAny={true} value={Char22_a} onChange={(newValue) => handleP22a(newValue)} />
-              </div>
-            </div>
-
-            <br /><br />
-            <button className="Cancel" onClick={() => NewHandleEntry()}>Cancel</button>
-            <button onClick={() => NewHandleEntry("Update")}>Enter</button>
-          </div>
-        </div>
-      )}
+      <h2>Scorebug Names</h2>
+      <h2><button onClick={toggleModComs}>Change Commentator info</button></h2>
       <SQFetch />
+      <h2><button onClick={toggleSection}>Manual Player/Round Info entry</button></h2>
+
       <div className="charchange">
         <div className="pair1">
           <h3>Player A: {P11}</h3>
@@ -374,18 +340,65 @@ function Names() {
         </div>
       </div>
 
-      <div>
-        <h2>Comentators</h2>
-        <input type="text" value={Commie1} placeholder="commie1 Tag" onChange={handlecommie1} />
+      {enterFields && (
+        <div className="modcontain">
+          <div className="mod">
+            <h3 className="modtxt">ENTER OR MODIFY NEW MATCH INFO</h3>
+            <p className="modtxt">Changes applied upon clicking Enter. Only fill fields A and C for singles</p>
+            <input type="text" value={RoundName} placeholder="round" onChange={handleRound} />
+            <input type="text" value={PoolName} placeholder="pool" onChange={handlePool} />
+            <br /><br />
 
-        <input type="text" value={Commie1p} placeholder="commie1 pronoun" onChange={handlecommie1p} />
-        <br />
+            <div className="TagEntry">
+              <div className="pair1">
+                <h3>Player/Duo 1:</h3>
+                <input type="text" value={P11} placeholder="Partner A tag" onChange={handleP11} />
+                <input type="text" value={P12} placeholder="Partner B tag" onChange={handleP12} />
+                <br /><br />
+                <input type="text" value={Pronoun11} placeholder="Partner A Pronoun" onChange={handlePronoun11} />
+                <input type="text" value={Pronoun12} placeholder="Partner B Pronoun" onChange={handlePronoun12} />
+                <br /><br />
+                <Autocomplete options={entered_name} trigger="" placeholder="Partner A Character" matchAny={true} value={Char11_a} onChange={(newValue) => handleP11a(newValue)} />
+                <Autocomplete options={entered_name} trigger="" placeholder="Partner B Character" matchAny={true} value={Char12_a} onChange={(newValue) => handleP12a(newValue)} />
+              </div>
+              <div className="pair2">
+                <h3>Player/Duo 2:</h3>
 
-        <input type="text" value={Commie2} placeholder="commie2 Tag" onChange={handlecommie2} />
+                <input type="text" value={P21} placeholder="Partner C Tag" onChange={handleP21} />
+                <input type="text" value={P22} placeholder="Partner D Tag" onChange={handleP22} />
+                <br /><br />
+                <input type="text" value={Pronoun21} placeholder="Partner C Pronoun" onChange={handlePronoun21} />
+                <input type="text" value={Pronoun22} placeholder="Partner D Pronoun" onChange={handlePronoun22} />
+                <br /><br />
+                <Autocomplete options={entered_name} trigger="" placeholder="Partner C Character" matchAny={true} value={Char21_a} onChange={(newValue) => handleP21a(newValue)} />
+                <Autocomplete options={entered_name} trigger="" placeholder="Partner D Character" matchAny={true} value={Char22_a} onChange={(newValue) => handleP22a(newValue)} />
+              </div>
+            </div>
 
-        <input type="text" value={Commie2p} placeholder="commie2 pronoun" onChange={handlecommie2p} />
-        <br />
-      </div>
+            <br /><br />
+            <button className="Cancel" onClick={() => NewHandleEntry()}>Cancel</button>
+            <button onClick={() => NewHandleEntry("Update")}>Enter</button>
+          </div>
+        </div>
+      )}
+
+      {modComs && (
+        <div className="modcontain">
+          <div className="mod">
+            <h3 className="modtxt">Comentator names</h3>
+            <input type="text" value={Commie1} placeholder="commie1 Tag" onChange={handlecommie1} />
+
+            <input type="text" value={Commie1p} placeholder="commie1 pronoun" onChange={handlecommie1p} />
+            <br />
+
+            <input type="text" value={Commie2} placeholder="commie2 Tag" onChange={handlecommie2} />
+
+            <input type="text" value={Commie2p} placeholder="commie2 pronoun" onChange={handlecommie2p} />
+            <br />
+            <button className="Cancel" onClick={() => NewHandleEntry()}>Cancel</button>
+            <button onClick={() => NewHandleEntry("Update")}>Enter</button>
+          </div>
+        </div>)}
     </>
   );
 }

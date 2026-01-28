@@ -165,9 +165,8 @@ function SQFetch() {
                     </div>
                 </div>
             )}
-            <br />
-            <h2><button onClick={() => FetchQueue()}>Fetch From Stream Queue</button></h2>
 
+            <h2><button onClick={() => FetchQueue()}>Fetch Tags From Stream Queue</button></h2>
         </>)
 }
 
