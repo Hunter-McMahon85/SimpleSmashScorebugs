@@ -19,7 +19,7 @@ function SQFetch() {
     useEffect(() => {
         setshowFields(JSON.parse(localStorage.getItem("streamconfig")));
         let TimeFromLastLogin = (Date.now() - parseInt(localStorage.getItem("login_time"))) / 3600000
-        if (Token != null && (TimeFromLastLogin > 24)) {
+        if (Token != null && (TimeFromLastLogin < 24)) {
             setLoginTXT("Signed In");
         }
     }, [Token]);
