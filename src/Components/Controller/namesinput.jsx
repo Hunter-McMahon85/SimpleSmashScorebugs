@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Autocomplete from "react-autocomplete-input";
 import "react-autocomplete-input/dist/bundle.css";
-import entered_name from "./charnames";
-import names_list_in_files from "./charfilenames";
+import IconNames from "./IconNames";
 import SQFetch from "./StreamQueFetch";
 import "../../css/control.css";
 
@@ -137,62 +136,28 @@ function Names() {
   };
 
   const UI_icons = (char, player) => {
+    function ResolveIconPath(c) {
+      let Paths = [];
+      for (let i = 0; i < 8; i += 1) {
+        Paths.push("charicons/" + IconNames[c][i]);
+      }
+      return Paths;
+    }
+
     char = char.trim();
-    if (entered_name.includes(char)) {
-      console.log(char);
-      let index = entered_name.indexOf(char);
+    if (Object.keys(IconNames).includes(char)) {
       switch (player) {
         case 11:
-          setChar11_arr([
-            "charicons/" + names_list_in_files[index][0],
-            "charicons/" + names_list_in_files[index][1],
-            "charicons/" + names_list_in_files[index][2],
-            "charicons/" + names_list_in_files[index][3],
-            "charicons/" + names_list_in_files[index][4],
-            "charicons/" + names_list_in_files[index][5],
-            "charicons/" + names_list_in_files[index][6],
-            "charicons/" + names_list_in_files[index][7],
-          ]);
-
+          setChar11_arr(ResolveIconPath(char));
           break;
         case 12:
-          setChar12_arr([
-            "charicons/" + names_list_in_files[index][0],
-            "charicons/" + names_list_in_files[index][1],
-            "charicons/" + names_list_in_files[index][2],
-            "charicons/" + names_list_in_files[index][3],
-            "charicons/" + names_list_in_files[index][4],
-            "charicons/" + names_list_in_files[index][5],
-            "charicons/" + names_list_in_files[index][6],
-            "charicons/" + names_list_in_files[index][7],
-          ]);
-
+          setChar12_arr(ResolveIconPath(char));
           break;
         case 21:
-          setChar21_arr([
-            "charicons/" + names_list_in_files[index][0],
-            "charicons/" + names_list_in_files[index][1],
-            "charicons/" + names_list_in_files[index][2],
-            "charicons/" + names_list_in_files[index][3],
-            "charicons/" + names_list_in_files[index][4],
-            "charicons/" + names_list_in_files[index][5],
-            "charicons/" + names_list_in_files[index][6],
-            "charicons/" + names_list_in_files[index][7],
-          ]);
-
+          setChar21_arr(ResolveIconPath(char));
           break;
         case 22:
-          setChar22_arr([
-            "charicons/" + names_list_in_files[index][0],
-            "charicons/" + names_list_in_files[index][1],
-            "charicons/" + names_list_in_files[index][2],
-            "charicons/" + names_list_in_files[index][3],
-            "charicons/" + names_list_in_files[index][4],
-            "charicons/" + names_list_in_files[index][5],
-            "charicons/" + names_list_in_files[index][6],
-            "charicons/" + names_list_in_files[index][7],
-          ]);
-
+          setChar22_arr(ResolveIconPath(char));
           break;
         default:
           break;
@@ -257,30 +222,44 @@ function Names() {
       "commiep1": Commie1p,
       "commiep2": Commie2p
     }
-
-    if (action == "Update") {
-      for (var Key in Fields) {
-        if (Fields[Key] !== "") {
-          localStorage.setItem(Key, Fields[Key]);
+    switch (action) {
+      case "Clear":
+        localStorage.setItem("p11", "")
+        localStorage.setItem("p12", "")
+        localStorage.setItem("p21", "")
+        localStorage.setItem("p22", "")
+        localStorage.setItem("Pronoun11", "")
+        localStorage.setItem("Pronoun12", "")
+        localStorage.setItem("Pronoun21", "")
+        localStorage.setItem("Pronoun22", "")
+        localStorage.setItem("round", "")
+        localStorage.setItem("pool", "")
+      case "Update":
+        for (var Key in Fields) {
+          if (Fields[Key] !== "") {
+            localStorage.setItem(Key, Fields[Key]);
+          }
         }
-      }
-      if (Char11_a !== "") {
-        UI_icons(Char11_a, 11)
-      }
-      if (Char12_a !== "") {
-        UI_icons(Char12_a, 12)
-      }
-      if (Char21_a !== "") {
-        UI_icons(Char21_a, 21)
-      }
-      if (Char22_a !== "") {
-        UI_icons(Char22_a, 22)
-      }
-    }
+        if (Char11_a !== "") {
+          UI_icons(Char11_a, 11)
+          console.log(Char11_a);
+        }
+        if (Char12_a !== "") {
+          UI_icons(Char12_a, 12)
+        }
+        if (Char21_a !== "") {
+          UI_icons(Char21_a, 21)
+        }
+        if (Char22_a !== "") {
+          UI_icons(Char22_a, 22)
+        }
 
-    if (modComs) setmodComs(false);
-    if (enterFields) setenterFields(false);
-  }
+      default:
+        if (modComs) setmodComs(false);
+        if (enterFields) setenterFields(false);
+        break;
+    }
+  };
   return (
     <>
       <h2>Scorebug Names</h2>
@@ -290,6 +269,7 @@ function Names() {
 
       <div className="charchange">
         <div className="pair1">
+          <h2>Pair/Player 1</h2>
           <h3>Player A: {P11}</h3>
           <div>
             <img src={Char11_arr[0]} alt="character icon" onClick={() => Update_Icon(0, 11)} />
@@ -315,6 +295,7 @@ function Names() {
         </div>
 
         <div className="pair2">
+          <h2>Pair/Player 2</h2>
           <h3>Player C: {P21}</h3>
           <div>
             <img src={Char21_arr[0]} alt="character icon" onClick={() => Update_Icon(0, 21)} />
@@ -351,18 +332,18 @@ function Names() {
 
             <div className="TagEntry">
               <div className="pair1">
-                <h3>Player/Duo 1:</h3>
+                <h3>Pair/Player 1:</h3>
                 <input type="text" value={P11} placeholder="Partner A tag" onChange={handleP11} />
                 <input type="text" value={P12} placeholder="Partner B tag" onChange={handleP12} />
                 <br /><br />
                 <input type="text" value={Pronoun11} placeholder="Partner A Pronoun" onChange={handlePronoun11} />
                 <input type="text" value={Pronoun12} placeholder="Partner B Pronoun" onChange={handlePronoun12} />
                 <br /><br />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner A Character" matchAny={true} value={Char11_a} onChange={(newValue) => handleP11a(newValue)} />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner B Character" matchAny={true} value={Char12_a} onChange={(newValue) => handleP12a(newValue)} />
+                <Autocomplete options={Object.keys(IconNames)} trigger="" placeholder="Partner A Character" matchAny={true} value={Char11_a} onChange={(newValue) => handleP11a(newValue)} />
+                <Autocomplete options={Object.keys(IconNames)} trigger="" placeholder="Partner B Character" matchAny={true} value={Char12_a} onChange={(newValue) => handleP12a(newValue)} />
               </div>
               <div className="pair2">
-                <h3>Player/Duo 2:</h3>
+                <h3>Pair/Player 2:</h3>
 
                 <input type="text" value={P21} placeholder="Partner C Tag" onChange={handleP21} />
                 <input type="text" value={P22} placeholder="Partner D Tag" onChange={handleP22} />
@@ -370,13 +351,14 @@ function Names() {
                 <input type="text" value={Pronoun21} placeholder="Partner C Pronoun" onChange={handlePronoun21} />
                 <input type="text" value={Pronoun22} placeholder="Partner D Pronoun" onChange={handlePronoun22} />
                 <br /><br />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner C Character" matchAny={true} value={Char21_a} onChange={(newValue) => handleP21a(newValue)} />
-                <Autocomplete options={entered_name} trigger="" placeholder="Partner D Character" matchAny={true} value={Char22_a} onChange={(newValue) => handleP22a(newValue)} />
+                <Autocomplete options={Object.keys(IconNames)} trigger="" placeholder="Partner C Character" matchAny={true} value={Char21_a} onChange={(newValue) => handleP21a(newValue)} />
+                <Autocomplete options={Object.keys(IconNames)} trigger="" placeholder="Partner D Character" matchAny={true} value={Char22_a} onChange={(newValue) => handleP22a(newValue)} />
               </div>
             </div>
 
             <br /><br />
             <button className="Cancel" onClick={() => NewHandleEntry()}>Cancel</button>
+            <button onClick={() => NewHandleEntry("Clear")}>Clear</button>
             <button onClick={() => NewHandleEntry("Update")}>Enter</button>
           </div>
         </div>

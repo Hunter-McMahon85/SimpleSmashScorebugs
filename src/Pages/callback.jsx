@@ -10,6 +10,7 @@ const Callback = () => {
   useEffect(() => {
     const query = new URLSearchParams(location.search);
     const authorizationCode = query.get('code');
+    localStorage.setItem('login_time', Date.now());
 
     if (authorizationCode) {
       exchangeAuthorizationCode(authorizationCode);
@@ -38,6 +39,7 @@ const Callback = () => {
 
       // Redirect to page we clicked from
       let context = localStorage.getItem('LoginContext');
+      localStorage.setItem('login_time', Date.now());
       
       switch (context){
         case "SQ":

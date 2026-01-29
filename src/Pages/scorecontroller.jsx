@@ -123,15 +123,13 @@ function Controller() {
               </div>
             </div>
           )}
-
-
+          <Names />
           <h2>Scoring</h2>
           <div className="scoring">
-            <button onClick={() => score(1, 1)}>Win Player/Duo 1</button>
+            <button onClick={() => score(1, 1)}>Win Pair/Player 1</button>
             <button onClick={() => reset_scores()}>Reset Score</button>
-            <button onClick={() => score(2, 1)}>Win Player/Duo 2</button>
+            <button onClick={() => score(2, 1)}>Win Pair/Player 2</button>
           </div>
-          <Names />
         </div>
       </div>
     </>

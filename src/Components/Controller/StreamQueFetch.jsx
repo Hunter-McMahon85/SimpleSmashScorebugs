@@ -6,9 +6,9 @@ import oauthConfig from "./oauthConfig";
 function SQFetch() {
     const endpoint = "https://api.start.gg/gql/alpha"
     let Token = localStorage.getItem("access_token");
-    const [Streamer, setStreamer] = useState("");
-    const [Slug, setSlug] = useState("");
-    const [LoginTXT, setLoginTXT] = useState("Login with Start.gg");
+    const [Streamer, setStreamer] = useState("None");
+    const [Slug, setSlug] = useState("None");
+    const [LoginTXT, setLoginTXT] = useState("Signed Out");
     const [showFields, setshowFields] = useState(false);
 
     const toggleSection = () => {
@@ -18,19 +18,18 @@ function SQFetch() {
 
     useEffect(() => {
         setshowFields(JSON.parse(localStorage.getItem("streamconfig")));
-        if (Token != null) {
-            setLoginTXT("Refresh Start.GG Login");
+        let TimeFromLastLogin = (Date.now() - parseInt(localStorage.getItem("login_time"))) / 3600000
+        if (Token != null && (TimeFromLastLogin > 24)) {
+            setLoginTXT("Signed In");
         }
     }, [Token]);
 
     const handleStream = (event) => {
         setStreamer(event.target.value);
-        console.log(Streamer);
     }
 
     const handleSlug = (event) => {
         setSlug(event.target.value);
-        console.log(Slug);
     }
 
     function FetchQueue() {
@@ -146,22 +145,26 @@ function SQFetch() {
 
     return (
         <>
-            <h2>
-            <button onClick={toggleSection}>Configure Stream Queue</button>
-            </h2>
-
+            <div className="qStatus">
+                <h3>Stream Queue Status</h3>
+                <p>Current Stream: {Streamer} </p>
+                <p> Current SLUG: {Slug}</p>
+                <p>Start.GG: {LoginTXT}</p>
+            </div>
+            <h2><button onClick={toggleSection}>Configure Stream Queue</button></h2>
 
             {showFields && (
                 <div className="modcontain">
                     <div className="mod">
-                        <button onClick={login}>{LoginTXT}</button>
+                        <button onClick={login}>Sign In</button>
+                        <p className="modtxt">Current Status: {LoginTXT}</p>
                         <br />
                         <input type="text" placeholder="Enter Tourney Slug" onChange={handleSlug} />
                         <br />
                         <input type="text" placeholder="Enter Streamer Name" onChange={handleStream} />
 
                         <br /><br />
-                        <button onClick={toggleSection}>Enter</button>
+                        <button onClick={toggleSection}>Close</button>
                     </div>
                 </div>
             )}

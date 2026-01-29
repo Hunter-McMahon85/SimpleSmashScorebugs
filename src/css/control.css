@@ -123,6 +123,11 @@
 .charchange h3 {
   color: white;
 }
+.charchange h2 {
+  color: white;
+  text-align: center;
+  background: none;
+}
 
 .ControlContain {
   background-color: gray;
@@ -141,4 +146,13 @@
   cursor: pointer;
   background-color: black;
   color: white;
+}
+
+.qStatus {
+  background-color: gray;
+  text-align: center;
+}
+
+.qStatus p {
+  margin: 5px;
 }
