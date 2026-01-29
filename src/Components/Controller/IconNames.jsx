@@ -858,7 +858,17 @@ const IconNames = {
         "chara_2_zelda_05.png",
         "chara_2_zelda_06.png",
         "chara_2_zelda_07.png"
-    ]
+    ],
+    "default": [
+    "smashball.png",
+    "smashball.png",
+    "smashball.png",
+    "smashball.png",
+    "smashball.png",
+    "smashball.png",
+    "smashball.png",
+    "smashball.png",
+  ]
 }
 
 export default IconNames;

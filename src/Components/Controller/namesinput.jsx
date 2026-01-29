@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Autocomplete from "react-autocomplete-input";
 import "react-autocomplete-input/dist/bundle.css";
 import IconNames from "./IconNames";
@@ -12,60 +12,31 @@ function Names() {
   };
 
   const [modComs, setmodComs] = useState(false);
-
   const toggleModComs = () => {
     setmodComs(!modComs);
   };
 
+  // displaying character icons for selection
   const [Char11_a, setChar11_a] = useState("");
-  const [Char11_arr, setChar11_arr] = useState([
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-  ]);
+  const [Char11_arr, setChar11_arr] = useState("");
 
   const [Char12_a, setChar12_a] = useState("");
-  const [Char12_arr, setChar12_arr] = useState([
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-  ]);
+  const [Char12_arr, setChar12_arr] = useState("");
 
   const [Char21_a, setChar21_a] = useState("");
-  const [Char21_arr, setChar21_arr] = useState([
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-  ]);
+  const [Char21_arr, setChar21_arr] = useState("");
 
   const [Char22_a, setChar22_a] = useState("");
-  const [Char22_arr, setChar22_arr] = useState([
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-    "charicons/smashball.png",
-  ]);
+  const [Char22_arr, setChar22_arr] = useState("");
 
-  // actual values that get updated in local storage
+  useEffect(() => {
+    UI_icons("default", 11);
+    UI_icons("default", 12);
+    UI_icons("default", 21);
+    UI_icons("default", 22);
+  }, []);
+
+  // player/round/commentator info
   const [P11, setP11] = useState("");
   const [P12, setP12] = useState("");
   const [P21, setP21] = useState("");
@@ -149,15 +120,19 @@ function Names() {
       switch (player) {
         case 11:
           setChar11_arr(ResolveIconPath(char));
+          localStorage.setItem("Char11", ResolveIconPath(char)[0]);
           break;
         case 12:
           setChar12_arr(ResolveIconPath(char));
+          localStorage.setItem("Char12", ResolveIconPath(char)[0]);
           break;
         case 21:
           setChar21_arr(ResolveIconPath(char));
+          localStorage.setItem("Char21", ResolveIconPath(char)[0]);
           break;
         case 22:
           setChar22_arr(ResolveIconPath(char));
+          localStorage.setItem("Char22", ResolveIconPath(char)[0]);
           break;
         default:
           break;
@@ -234,6 +209,15 @@ function Names() {
         localStorage.setItem("Pronoun22", "")
         localStorage.setItem("round", "")
         localStorage.setItem("pool", "")
+        UI_icons("default", 11)
+        UI_icons("default", 12)
+        UI_icons("default", 21)
+        UI_icons("default", 22)
+        setChar22_a("");
+        setChar21_a("");
+        setChar12_a("");
+        setChar11_a("");
+        break;
       case "Update":
         for (var Key in Fields) {
           if (Fields[Key] !== "") {
@@ -253,7 +237,6 @@ function Names() {
         if (Char22_a !== "") {
           UI_icons(Char22_a, 22)
         }
-
       default:
         if (modComs) setmodComs(false);
         if (enterFields) setenterFields(false);
@@ -357,7 +340,7 @@ function Names() {
             </div>
 
             <br /><br />
-            <button className="Cancel" onClick={() => NewHandleEntry()}>Cancel</button>
+            <button className="Cancel" onClick={() => NewHandleEntry()}>Close</button>
             <button onClick={() => NewHandleEntry("Clear")}>Clear</button>
             <button onClick={() => NewHandleEntry("Update")}>Enter</button>
           </div>
