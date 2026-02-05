@@ -2,7 +2,6 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Controller from "./Pages/scorecontroller";
 import Landing from "./Pages/landing";
-import Comms from "./Components/NTZ/comms";
 import About from "./Pages/about";
 import HowToUse from "./Pages/howto";
 import Scoreboard from "./Pages/scoreboard";
@@ -10,7 +9,7 @@ import Callback from "./Pages/callback";
 import PP from "./Pages/privacypolicy";
 import Terms from "./Pages/Terms";
 import MatchBoard from "./Components/MatchBoard/Board";
-
+import Comms from "./Components/overlays/NTZ/comms";
 
 
 function App() {

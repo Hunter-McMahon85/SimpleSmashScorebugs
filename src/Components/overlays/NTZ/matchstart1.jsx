@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../css/NTZ/ms1.css";
+import "../../../css/overlays/ntz/ms1.css";
 
 const MatchStart1 = () => {
   const [isSlide, setSlide] = useState(true);

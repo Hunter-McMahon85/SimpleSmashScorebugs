@@ -1,6 +1,6 @@
 import React from 'react'
-import NavBar from "../Components/navbar";
-import Foot from '../Components/footer';
+import NavBar from "../Components/landing/navbar";
+import Foot from '../Components/landing/footer';
 import '../css/Landing.css'
 
 const PP = () => {

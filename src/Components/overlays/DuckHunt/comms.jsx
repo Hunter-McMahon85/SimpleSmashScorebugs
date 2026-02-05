@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../css/NTZ/commie.css";
+import "../../../css/overlays/DuckHunt/commie.css";
 
 const Comms = () => {
   const [isAnimated, setIsAnimated] = useState(false);

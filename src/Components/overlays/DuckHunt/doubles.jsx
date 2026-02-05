@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../css/DuckHunt/doubles.css";
+import "../../../css/overlays/DuckHunt/doubles.css";
 
 const ScoreboardDuo = () => {
   const [isAnimated, setIsAnimated] = useState(false);

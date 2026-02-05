@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
 import oauthConfig from "../Controller/oauthConfig";
-import NavBar from "../navbar";
-import Foot from "../footer";
 import { Link } from "react-router-dom";
 
 function BoardConfig() {

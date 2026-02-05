@@ -206,15 +206,30 @@ h2 {
 
 .initialcontain ol {
   text-align: left;
-  margin: 0% 20%;
+  margin: auto;
 }
 
 .initialcontain ul {
   text-align: left;
-  margin: 0% 20%;
+  margin: auto;
 }
 .initialcontain {
   padding-bottom: 5%;
+}
+
+.initialcontain table {
+  margin: auto;
+  width: 90%;
+  table-layout: fixed;
+  overflow-wrap: break-word;
+}
+
+.initialcontain td {
+  width: 50%;
+}
+
+.initialcontain th {
+  width: 50%;
 }
 
 @media (width >= 400px) {
@@ -292,3 +307,5 @@ footer li a:hover {
   color: black;
   text-decoration: none;
 }
+
+

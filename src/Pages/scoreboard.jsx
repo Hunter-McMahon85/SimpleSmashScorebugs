@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import NTZScoreBug from "../Components/NTZ/NTZscorebug";
-import DHScoreBug from "../Components/DuckHunt/DHscorebug";
-import DefaultBug from "../Components/DefaultBug";
+import DefaultBug from "../Components/overlays/DefaultBug";
+import NTZScoreBug from "../Components/overlays/NTZ/ntzscorebug";
+import DHScoreBug from "../Components/overlays/DuckHunt/dhscorebug";
 
 const Scoreboard = () => {
   const [BugTheme, setBugTheme] = useState(<DefaultBug />);

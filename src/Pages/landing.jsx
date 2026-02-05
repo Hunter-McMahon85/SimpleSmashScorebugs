@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import NavBar from "../Components/navbar";
-import Foot from '../Components/footer';
+import Foot from "../Components/landing/footer";
+import NavBar from "../Components/landing/navbar";
 import BoardConfig from '../Components/MatchBoard/BoardConfig';
 import '../css/Landing.css'
 
