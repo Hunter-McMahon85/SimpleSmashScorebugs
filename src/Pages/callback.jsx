@@ -23,7 +23,6 @@ const Callback = () => {
       const response = await axios.post('https://shy-disk-9135.gochargershunter.workers.dev/?https://api.start.gg/oauth/access_token', {
         grant_type: 'authorization_code',
         client_id: oauthConfig.client_id,
-        client_secret: oauthConfig.Cs,
         code: authorizationCode,
         redirect_uri: oauthConfig.redirect_uri,
         scope: 'user.identity user.email',
@@ -43,14 +42,12 @@ const Callback = () => {
       
       switch (context){
         case "SQ":
-          
           navigate('/controller', { replace: true });
           break;
         case "MB":
           navigate('/', { replace: true });
           break;
-
-      }1
+      }
     } catch (error) {
       console.error('Error exchanging code for token:', error);
     }
