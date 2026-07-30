@@ -20,7 +20,7 @@ const Callback = () => {
   const exchangeAuthorizationCode = async (authorizationCode) => {
     try {
       // need a better cors proxy solution. maybe?
-      const response = await axios.post('https://shy-disk-9135.gochargershunter.workers.dev/?https://api.start.gg/oauth/access_token', {
+      const response = await axios.post('https://shy-disk-9135.gochargershunter.workers.dev/token-exchange', {
         grant_type: 'authorization_code',
         client_id: oauthConfig.client_id,
         code: authorizationCode,
